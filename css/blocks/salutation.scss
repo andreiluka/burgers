@@ -1,0 +1,35 @@
+.salutation {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex: 1;
+
+   &__img {
+      position: relative;
+      margin-top: -45px;
+
+      &:after {
+         content: 'sadkjfghlkjbvcdz';
+         display: block;
+         width: 451px;
+         height: 241px;
+         background: url('../img/drops.png') center center no-repeat;
+         position: absolute;
+         top: 50px;
+         left: 30px;
+      }
+   }
+
+   &__tagline {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+   }
+
+   &__text {
+      font-family: 'lifehack', Arial, Helvetica, sans-serif;
+      font-size: 63px;
+      line-height: 0.9;
+   }
+}

@@ -1,0 +1,14 @@
+.button {
+   color: #ffffff;
+   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+   font-size: 13px;
+   text-transform: uppercase;
+   background-color: #e45028;
+   padding: 10px 16px;
+   border-radius: 5px;
+   transition: 0.3s;
+
+   &:hover {
+      background-color: #f9b43b;
+   }
+}

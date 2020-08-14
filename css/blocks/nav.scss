@@ -1,0 +1,30 @@
+.nav__list {
+   display: flex;
+}
+
+.nav__item {
+   display: inline-flex;
+   align-items: center;
+   transition: 0.2s;
+
+   &:after {
+      content: '\2022';
+      margin: 0 17px;
+   }
+
+   &:last-child:after {
+      display: none;
+   }
+
+   &:hover {
+      font-weight: 700;
+      color: #e45028;
+   }
+
+   .nav__link {
+      font-size: 13px;
+      color: inherit;
+      text-transform: uppercase;
+      text-decoration: none;
+   }
+}
