@@ -469,22 +469,8 @@ table {
   font-weight: 400;
   font-style: normal; }
 
-.container {
-  width: 950px;
-  height: 100vh;
-  margin: 0 auto; }
-
-.container--intro {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-
 .intro {
-  background: url("../img/bg-intro.jpg");
+  background: url("../img/bg-intro.jpg") center center;
   background-size: cover;
   position: relative;
   color: #ffffff; }
@@ -577,19 +563,20 @@ table {
   align-items: center;
   -webkit-box-flex: 1;
   -ms-flex: 1;
-  flex: 1; }
-  .salutation__img {
+  flex: 1;
+  padding-bottom: 140px; }
+  .salutation__pic {
     position: relative;
-    margin-top: -45px; }
-    .salutation__img:after {
-      content: 'sadkjfghlkjbvcdz';
+    margin-right: 13px; }
+    .salutation__pic:after {
+      content: '';
       display: block;
       width: 451px;
       height: 241px;
       background: url("../img/drops.png") center center no-repeat;
       position: absolute;
-      top: 50px;
-      left: 30px; }
+      top: 68px;
+      left: -34px; }
   .salutation__tagline {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -603,11 +590,30 @@ table {
     justify-content: center;
     -webkit-box-align: start;
     -ms-flex-align: start;
-    align-items: flex-start; }
+    align-items: flex-start;
+    padding-top: 50px; }
   .salutation__text {
     font-family: 'lifehack', Arial, Helvetica, sans-serif;
     font-size: 63px;
-    line-height: 0.9; }
+    line-height: 0.95; }
+
+.we {
+  background: url("../../img/bg-we2.jpg") center center;
+  background-size: cover; }
+
+.container {
+  width: 950px;
+  height: 100vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.container--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
 .button {
   color: #ffffff;
