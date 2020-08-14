@@ -1,0 +1,42 @@
+.advantages {
+   margin-top: 21px;
+
+   &__list {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: calc(100% / 3 - 15px);
+   }
+
+   &__img {
+      width: 97px;
+      height: 89px;
+      margin-bottom: 33px;
+   }
+
+   &__title {
+      font-family: 'lifehack', Arial, Helvetica, sans-serif;
+      font-size: 24px;
+   }
+
+   &__text {
+      opacity: 0.8;
+      font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+
+   }
+}
+
+@each $advimg in (meat, hand, natural) {
+
+   .advantages__img-#{$advimg} {
+      background: url('../../img/#{$advimg}.png') center center no-repeat;
+   }
+}

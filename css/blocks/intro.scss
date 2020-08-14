@@ -1,3 +1,8 @@
+.container__intro {
+   display: flex;
+   flex-direction: column;
+}
+
 .intro {
    background: url('../img/bg-intro.jpg') center center;
    background-size: cover;
