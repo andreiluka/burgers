@@ -23,6 +23,7 @@
    &__title {
       font-family: 'lifehack', Arial, Helvetica, sans-serif;
       font-size: 24px;
+      margin-bottom: 20px;
    }
 
    &__text {
@@ -36,6 +37,6 @@
 @each $advimg in (meat, hand, natural) {
 
    .advantages__img-#{$advimg} {
-      background: url('../../img/#{$advimg}.png') center center no-repeat;
+      background: url('../img/#{$advimg}.png') center center no-repeat;
    }
 }

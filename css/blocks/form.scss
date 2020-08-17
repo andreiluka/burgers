@@ -7,8 +7,7 @@
 
 .form {
    color: #ffffff;
-   background: url('../../img/bg-form.jpg') center center;
-   background-size: cover;
+   background: url('../img/bg-form.jpg') center center / cover no-repeat;
 
    &__tag {
       display: flex;
