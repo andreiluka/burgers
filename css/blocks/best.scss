@@ -1,0 +1,14 @@
+.best {
+   background: url('../img/bg-best.jpg') center center / cover no-repeat;
+   color: $black;
+
+   &__list {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 21px;
+   }
+
+   &__item {
+      width: calc(100% / 3 - 15px);
+   }
+}
