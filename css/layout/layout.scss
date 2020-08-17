@@ -8,6 +8,8 @@ body {
 }
 
 body {
+   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+   font-size: 14px;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
@@ -40,7 +42,35 @@ h6 {
    font-weight: normal;
 }
 
+p {
+   padding: 0;
+   margin: 0;
+}
+
 table {
    border-collapse: collapse;
    border-spacing: 0;
+}
+
+footer {
+   position: relative;
+   width: 100%;
+}
+
+.wrapper {
+   width: 100%;
+   min-width: 940px + 20px;
+   min-height: 100%;
+   overflow: hidden;
+}
+
+.section {
+   height: 100vh;
+   min-height: 650px;
+}
+
+.container {
+   width: 940px;
+   height: 100%;
+   margin: 0 auto;
 }

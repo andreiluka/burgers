@@ -1,0 +1,159 @@
+.container__form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.form {
+   color: #ffffff;
+   background: url('../../img/bg-form.jpg') center center;
+   background-size: cover;
+
+   &__tag {
+      display: flex;
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 14px;
+   }
+
+   &__column {
+      margin-right: 20px;
+      width: calc(100% / 2 - 20px);
+
+      &:last-child {
+         margin-right: 0;
+      }
+   }
+
+   &__row {
+      display: flex;
+      margin-bottom: 20px;
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-right: 20px;
+
+      &:last-child {
+         margin-right: 0;
+      }
+
+      &-name {
+         margin-bottom: 7px;
+      }
+
+      &-input {
+         border: 1px solid #d1cfcb;
+         border-radius: 5px;
+         padding: 12px 20px;
+
+         &:focus {
+            padding: 11px 19px;
+            border: 2px solid #f9b43b;
+         }
+      }
+
+      &-textarea {
+         resize: none;
+      }
+   }
+
+   &__radio {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      &:last-child {
+         margin-right: 0;
+      }
+
+
+      &-input {
+         display: none;
+      }
+
+      &-input:checked+&-custom:after {
+         display: block;
+      }
+
+      &-custom {
+         display: block;
+         width: 15px;
+         height: 15px;
+         background: #ffffff;
+         border-radius: 50%;
+         position: relative;
+         margin-right: 10px;
+
+         &:after {
+            content: '';
+            display: block;
+            width: 7px;
+            height: 7px;
+            background-color: $red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+         }
+      }
+   }
+
+   &__checkbox {
+      display: flex;
+      align-items: center;
+
+      &-input {
+         display: none;
+      }
+
+      &-input:checked+&-custom:after {
+         display: block;
+      }
+
+      &-custom {
+         display: block;
+         width: 15px;
+         height: 15px;
+         background: #ffffff;
+         border-radius: 2px;
+         position: relative;
+         margin-right: 10px;
+
+         &:after {
+            content: '';
+            display: block;
+            width: 11px;
+            height: 9px;
+            background: url('../../img/check-mark.png') center center no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+         }
+      }
+   }
+
+   &__btn-reset {
+      color: inherit;
+      font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      margin-left: 10px;
+      transition: 0.3s;
+
+      &:hover {
+         font-weight: 500;
+      }
+   }
+
+}

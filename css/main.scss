@@ -2,21 +2,19 @@
 
 $orange: #f9b43b;
 $black: #2f3234;
-
+$red: #e35028;
 
 // layout
 
 @import "./layout/normalize.scss";
-@import "./layout/base.scss";
+@import "./layout/layout.scss";
 @import "./layout/fonts.scss";
 
 
 // blocks
 
-@import "./blocks/container.scss";
 @import "./blocks/button.scss";
 @import "./blocks/title.scss";
-@import "./blocks/pagination.scss";
 
 
 @import "./blocks/intro.scss";
@@ -28,3 +26,9 @@ $black: #2f3234;
 @import "./blocks/advantages.scss";
 
 @import "./blocks/reviews.scss";
+
+@import "./blocks/form.scss";
+
+
+
+@import "./blocks/pagination.scss";
