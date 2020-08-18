@@ -44,12 +44,13 @@
    }
 
    &-input {
+      font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
       border: 1px solid #d1cfcb;
       border-radius: 5px;
-      padding: 12px 20px;
+      padding: 8px 18px;
 
       &:focus {
-         padding: 11px 19px;
+         padding: 7px 17px;
          border: 2px solid #f9b43b;
       }
    }
