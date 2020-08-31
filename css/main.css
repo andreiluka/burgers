@@ -762,6 +762,100 @@ footer {
 .feature__img-natural {
   background: url("../img/natural.png") center center/contain no-repeat; }
 
+.team {
+  background: url("../../img/bg-team.jpg") center top/cover no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  .team__block {
+    width: 50%;
+    height: 100%;
+    color: #ffffff;
+    background: rgba(47, 50, 52, 0.9);
+    padding: 9% 9%; }
+
+.team__list {
+  margin-top: 1rem; }
+
+.team-member {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 1.125rem; }
+  .team-member:last-child {
+    margin-bottom: 0; }
+
+.team-member__name {
+  font-family: 'gagalin', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0 0 1.0625rem 1rem;
+  position: relative; }
+  .team-member__name:before {
+    content: '';
+    border: 6px solid transparent;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-color: #f9b43b;
+    position: absolute;
+    top: 0.3125rem;
+    left: -1.0625rem; }
+
+.team-member__hidden {
+  display: none;
+  margin-bottom: 1.25rem; }
+
+.team-member__avatar {
+  width: 51%;
+  max-width: 6.25rem;
+  margin-right: 4%; }
+
+.team-member__img {
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+.team-member__position {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 1.0625rem; }
+
+.team-member__duties {
+  font-weight: 300;
+  line-height: 1.7193em; }
+
+.team-member__desc {
+  width: 49%;
+  max-width: 15rem; }
+
+.team-member__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.team-member--active .team-member__hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.team-member--active .team-member__name {
+  color: #f9b43b; }
+  .team-member--active .team-member__name:before {
+    top: 0;
+    border-top-color: transparent;
+    border-bottom-color: #f9b43b; }
+
 .reviews {
   color: #ffffff; }
 
