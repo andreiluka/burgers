@@ -3,6 +3,7 @@
    justify-content: center;
    align-items: center;
    flex: 0.8;
+   padding: 0 10%;
 
    @include tablets {
       flex-direction: column;

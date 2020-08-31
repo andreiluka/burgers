@@ -9,5 +9,17 @@
       color: #ffffff;
       background: rgba(#2f3234, .9);
       padding: 9% 9%;
+
+      @include tablets {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
    }
+}
+
+.team__list {
+   margin-top: rem(20px);
 }

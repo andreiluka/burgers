@@ -11,4 +11,9 @@
 .reviews__item {
    width: calc(100% / 4);
    height: 50%;
+
+   @include tablets {
+      width: calc(100% / 2);
+      height: 25%;
+   }
 }

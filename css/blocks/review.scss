@@ -26,6 +26,11 @@
    background: rgba(#272829, 0.8);
    opacity: 0;
    transition: 0.5s;
+
+   @include tablets {
+      text-align: center;
+      padding: 1.3em 10%;
+   }
 }
 
 .review__name {
