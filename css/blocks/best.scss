@@ -5,10 +5,10 @@
    &__list {
       display: flex;
       justify-content: space-between;
-      margin-top: 21px;
+      margin-top: rem(21px); // 21px
    }
 
    &__item {
-      width: calc(100% / 3 - 15px);
+      width: calc(100% / 3 - 0.9375rem); // 15px
    }
 }

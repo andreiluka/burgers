@@ -1,5 +1,12 @@
+.nav {
+   @include tablets {
+      display: none;
+   }
+}
+
 .nav__list {
    display: flex;
+   margin-right: rem(15px);
 }
 
 .nav__item {
@@ -9,7 +16,7 @@
 
    &:after {
       content: '\2022';
-      margin: 0 17px;
+      margin: 0 1.2143em; // 17px
    }
 
    &:last-child:after {
@@ -22,7 +29,7 @@
    }
 
    .nav__link {
-      font-size: 13px;
+      font-size: rem(13px); // 13px
       color: inherit;
       text-transform: uppercase;
       text-decoration: none;

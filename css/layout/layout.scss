@@ -7,9 +7,21 @@ body {
    height: 100%;
 }
 
+html {
+   font-size: 16px;
+
+   @include tablets {
+      font-size: 14px;
+   }
+
+   @include phones {
+      font-size: 12px;
+   }
+}
+
 body {
-   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
    font-size: 14px;
+   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
@@ -59,7 +71,7 @@ footer {
 
 .wrapper {
    width: 100%;
-   min-width: 940px + 20px;
+   // max-width: 940px + 20px;
    min-height: 100%;
    overflow: hidden;
 }
@@ -70,7 +82,8 @@ footer {
 }
 
 .container {
-   width: 940px;
+   max-width: 940px;
+   width: 95%;
    height: 100%;
    margin: 0 auto;
    display: flex;

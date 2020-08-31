@@ -22,7 +22,7 @@
    left: 0;
    right: 0;
    bottom: 0;
-   padding: 50px 5% 20px;
+   padding: 3.5714em 5% 1.4286em; // 50px 5% 20px
    background: rgba(#272829, 0.8);
    opacity: 0;
    transition: 0.5s;
@@ -30,13 +30,13 @@
 
 .review__name {
    font-family: "Gagalin", Arial, Helvetica, sans-serif;
-   margin-bottom: 20px;
+   margin-bottom: rem(20px); // 20px
 }
 
 .review__text {
    font-weight: 300;
-   line-height: 24px;
-   margin-bottom: 10px;
+   line-height: 1.714em; // 24px
+   margin-bottom: 0.714em; // 10px
 }
 
 .review__button {

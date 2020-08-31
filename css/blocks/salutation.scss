@@ -4,19 +4,15 @@
    align-items: center;
    flex: 0.8;
 
-   &__pic {
-      position: relative;
-      margin-right: 13px;
+   @include tablets {
+      flex-direction: column;
+   }
 
-      &:after {
-         content: '';
-         display: block;
-         width: 451px;
-         height: 241px;
-         background: url('../img/drops.png') center center no-repeat;
-         position: absolute;
-         top: 68px;
-         left: -34px;
+   &__pic {
+      margin-right: rem(13px); // 13px
+
+      @include tablets {
+         margin-right: 0;
       }
    }
 
@@ -25,12 +21,18 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding-top: 50px;
+      padding-top: rem(50px);
+
+      @include tablets {
+         padding-top: rem(10px);
+         align-items: center;
+         text-align: center;
+      }
    }
 
    &__text {
       font-family: 'lifehack', Arial, Helvetica, sans-serif;
-      font-size: 63px;
+      font-size: rem(63px); // 63px
       line-height: 1;
    }
 }

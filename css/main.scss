@@ -1,8 +1,20 @@
-// переменные
+// variables
 
 $orange: #f9b43b;
 $black: #2f3234;
 $red: #e35028;
+
+
+// breakpoints
+
+// $desctop: 1200px;
+// $laptop: 992px;
+$tablets: 768px;
+$phones: 480px;
+
+// media
+
+@import "./layout/media.scss";
 
 // layout
 
@@ -16,10 +28,10 @@ $red: #e35028;
 @import "./blocks/button.scss";
 @import "./blocks/title.scss";
 
-
 @import "./blocks/intro.scss";
 @import "./blocks/header.scss";
 @import "./blocks/nav.scss";
+@import "./blocks/hamburger-menu.scss";
 @import "./blocks/salutation.scss";
 
 @import "./blocks/best.scss";

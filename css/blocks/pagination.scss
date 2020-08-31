@@ -3,6 +3,10 @@
    top: 15%;
    right: 50px;
    z-index: 50;
+
+   @include tablets {
+      display: none;
+   }
 }
 
 .pagination__list {
