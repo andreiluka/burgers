@@ -25,7 +25,7 @@
 @each $menuimg in (meat-eater, vegetarian, dietary) {
 
    .menu-accordeon__link--#{$menuimg} {
-      background: url('../../img/#{$menuimg}.jpg') center center / cover no-repeat;
+      background: url('../img/#{$menuimg}.jpg') center center / cover no-repeat;
    }
 }
 

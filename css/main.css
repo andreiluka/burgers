@@ -975,7 +975,7 @@ footer {
     background: #1f2122; }
 
 .menu {
-  background: url("../../img/bg-menu.jpg") top center/cover no-repeat;
+  background: url("../img/bg-menu.jpg") top center/cover no-repeat;
   color: #ffffff;
   position: relative; }
   .menu__title {
@@ -1004,13 +1004,13 @@ footer {
   position: relative; }
 
 .menu-accordeon__link--meat-eater {
-  background: url("../../img/meat-eater.jpg") center center/cover no-repeat; }
+  background: url("../img/meat-eater.jpg") center center/cover no-repeat; }
 
 .menu-accordeon__link--vegetarian {
-  background: url("../../img/vegetarian.jpg") center center/cover no-repeat; }
+  background: url("../img/vegetarian.jpg") center center/cover no-repeat; }
 
 .menu-accordeon__link--dietary {
-  background: url("../../img/dietary.jpg") center center/cover no-repeat; }
+  background: url("../img/dietary.jpg") center center/cover no-repeat; }
 
 .menu-accordeon__name {
   font-size: 2.5rem;
