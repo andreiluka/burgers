@@ -1,0 +1,66 @@
+.menu-accordeon {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   @extend %clearfix;
+}
+
+.menu-accordeon__item {
+   float: left;
+   height: 100%;
+}
+
+.menu-accordeon__link {
+   display: block;
+   width: rem(80px);
+   height: 100%;
+   font-family: "Gagalin", Arial, Helvetica, sans-serif;
+   text-decoration: none;
+   color: inherit;
+   float: left;
+   position: relative;
+}
+
+@each $menuimg in (meat-eater, vegetarian, dietary) {
+
+   .menu-accordeon__link--#{$menuimg} {
+      background: url('../../img/#{$menuimg}.jpg') center center / cover no-repeat;
+   }
+}
+
+.menu-accordeon__name {
+   font-size: rem(40px);
+   transform: rotate(-90deg) translateY(-50%);
+   transform-origin: 0 0;
+   white-space: nowrap;
+   position: absolute;
+   top: 93.9%;
+   left: 50%;
+}
+
+.menu-accordeon__desc {
+   width: 0;
+   height: 100%;
+   background: rgba(#0e0f0f, 0.9);
+   float: left;
+   overflow: hidden;
+   padding: 8% 12%;
+}
+
+.menu-accordeon__text {
+   width: 100%;
+   line-height: 1.8;
+   display: none;
+}
+
+.menu-accordeon__item--active {
+
+   .menu-accordeon__desc {
+      width: rem(530px);
+   }
+
+   .menu-accordeon__text {
+      display: block;
+   }
+}

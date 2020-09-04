@@ -18,6 +18,7 @@ $phones: 480px;
 
 // layout
 
+@import "./layout/mixins.scss";
 @import "./layout/normalize.scss";
 @import "./layout/layout.scss";
 @import "./layout/fonts.scss";
@@ -43,8 +44,15 @@ $phones: 480px;
 @import "./blocks/reviews.scss";
 @import "./blocks/review.scss";
 
+@import "./blocks/menu.scss";
+@import "./blocks/menu-accordeon.scss";
+
 @import "./blocks/form.scss";
 
+@import "./blocks/map.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/contacts.scss";
+@import "./blocks/socials.scss";
 
 
 @import "./blocks/pagination.scss";

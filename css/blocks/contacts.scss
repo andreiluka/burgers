@@ -1,0 +1,28 @@
+.contacts {
+   font-style: normal;
+
+   &__address {
+      font-weight: 300;
+      margin-bottom: rem(8px);
+   }
+
+   &__tel {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 1.5em;
+      color: #e45028;
+      position: relative;
+
+      &:before {
+         content: '';
+         display: block;
+         width: 12px;
+         height: 11px;
+         background: url('../img/phone.png') center center no-repeat;
+         position: absolute;
+         top: 0.21428em;
+         left: -1.42857em;
+      }
+   }
+}

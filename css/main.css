@@ -1,3 +1,10 @@
+.menu-accordeon:before, .menu-accordeon:after {
+  content: "";
+  display: table; }
+
+.menu-accordeon:after {
+  clear: both; }
+
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -536,7 +543,15 @@ footer {
 .title {
   font-family: 'gagalin', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 4.5rem;
-  line-height: 1.7; }
+  line-height: 1.1;
+  margin-bottom: 40px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 5.14286rem; } }
+  @media screen and (max-width: 480px) {
+    .title {
+      font-size: 4.5rem; } }
 
 .title__orange {
   color: #f9b43b; }
@@ -630,7 +645,6 @@ footer {
   .nav__item:last-child:after {
     display: none; }
   .nav__item:hover {
-    font-weight: 700;
     color: #e35028; }
   .nav__item .nav__link {
     font-size: 0.8125rem;
@@ -676,14 +690,14 @@ footer {
   align-items: center;
   -webkit-box-flex: 0.8;
   -ms-flex: 0.8;
-  flex: 0.8;
-  padding: 0 10%; }
+  flex: 0.8; }
   @media screen and (max-width: 768px) {
     .salutation {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
-      flex-direction: column; } }
+      flex-direction: column;
+      padding: 0 10%; } }
   .salutation__pic {
     margin-right: 0.8125rem; }
     @media screen and (max-width: 768px) {
@@ -960,12 +974,85 @@ footer {
   .review__button:hover {
     background: #1f2122; }
 
+.menu {
+  background: url("../../img/bg-menu.jpg") top center/cover no-repeat;
+  color: #ffffff;
+  position: relative; }
+  .menu__title {
+    position: absolute;
+    top: 17%;
+    left: 8%; }
+
+.menu-accordeon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0; }
+
+.menu-accordeon__item {
+  float: left;
+  height: 100%; }
+
+.menu-accordeon__link {
+  display: block;
+  width: 5rem;
+  height: 100%;
+  font-family: "Gagalin", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: inherit;
+  float: left;
+  position: relative; }
+
+.menu-accordeon__link--meat-eater {
+  background: url("../../img/meat-eater.jpg") center center/cover no-repeat; }
+
+.menu-accordeon__link--vegetarian {
+  background: url("../../img/vegetarian.jpg") center center/cover no-repeat; }
+
+.menu-accordeon__link--dietary {
+  background: url("../../img/dietary.jpg") center center/cover no-repeat; }
+
+.menu-accordeon__name {
+  font-size: 2.5rem;
+  -webkit-transform: rotate(-90deg) translateY(-50%);
+  -ms-transform: rotate(-90deg) translateY(-50%);
+  transform: rotate(-90deg) translateY(-50%);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  white-space: nowrap;
+  position: absolute;
+  top: 93.9%;
+  left: 50%; }
+
+.menu-accordeon__desc {
+  width: 0;
+  height: 100%;
+  background: rgba(14, 15, 15, 0.9);
+  float: left;
+  overflow: hidden;
+  padding: 8% 12%; }
+
+.menu-accordeon__text {
+  width: 100%;
+  line-height: 1.8;
+  display: none; }
+
+.menu-accordeon__item--active .menu-accordeon__desc {
+  width: 33.125rem; }
+
+.menu-accordeon__item--active .menu-accordeon__text {
+  display: block; }
+
 .form {
   color: #ffffff;
   background: url("../img/bg-form.jpg") center center/cover no-repeat; }
 
 .form__tag {
   margin-top: 0.875rem; }
+  @media screen and (max-width: 768px) {
+    .form__tag {
+      padding: 0 16%; } }
 
 .form__column {
   display: -webkit-inline-box;
@@ -980,6 +1067,10 @@ footer {
   margin-right: 20px; }
   .form__column:last-child {
     margin-right: 0; }
+  @media screen and (max-width: 768px) {
+    .form__column {
+      margin-right: 0;
+      width: 100%; } }
 
 .form__row {
   display: -webkit-box;
@@ -1086,6 +1177,10 @@ footer {
     transform: translate(-50%, -50%);
     display: none; }
 
+@media screen and (max-width: 768px) {
+  .form__btn {
+    margin-top: 1.875rem; } }
+
 .form__btn-reset {
   color: inherit;
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
@@ -1096,6 +1191,88 @@ footer {
   transition: 0.3s; }
   .form__btn-reset:hover {
     font-weight: 500; }
+
+.map {
+  background: url("../img/bg-map.jpg") center center/cover no-repeat;
+  position: relative; }
+  .map:after, .map:before {
+    content: '';
+    display: block;
+    width: 46px;
+    height: 57px;
+    background: url("../img/map-marker.png") center center/cover no-repeat;
+    position: absolute; }
+  .map:after {
+    top: 30%;
+    left: 43%; }
+  .map:before {
+    top: 50%;
+    left: 54%; }
+
+.footer {
+  padding: 0.625rem 0;
+  background: #111111;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+  .footer__container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
+.contacts {
+  font-style: normal; }
+  .contacts__address {
+    font-weight: 300;
+    margin-bottom: 0.5rem; }
+  .contacts__tel {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 1.5em;
+    color: #e45028;
+    position: relative; }
+    .contacts__tel:before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 11px;
+      background: url("../img/phone.png") center center no-repeat;
+      position: absolute;
+      top: 0.21428em;
+      left: -1.42857em; }
+
+.socials__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.socials__link {
+  display: block;
+  width: 23px;
+  height: 23px;
+  background: url("../img/twitter.png") center center no-repeat;
+  margin-right: 1.25rem; }
+
+.socials__link-vk {
+  background: url("../../img/vk.png") center center no-repeat; }
+
+.socials__link-fb {
+  background: url("../../img/fb.png") center center no-repeat; }
+
+.socials__link-inst {
+  background: url("../../img/inst.png") center center no-repeat; }
+
+.socials__link-twitter {
+  background: url("../../img/twitter.png") center center no-repeat; }
 
 .pagination {
   position: fixed;

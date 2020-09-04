@@ -1,0 +1,17 @@
+.socials__list {
+   display: flex;
+}
+
+.socials__link {
+   display: block;
+   width: 23px;
+   height: 23px;
+   background: url('../img/twitter.png') center center no-repeat;
+   margin-right: rem(20px);
+}
+
+@each $socialico in (vk, fb, inst, twitter) {
+   .socials__link-#{$socialico} {
+      background: url('../../img/#{$socialico}.png') center center no-repeat;
+   }
+}
