@@ -10,10 +10,11 @@
    }
 
    &__pic {
-      margin-right: rem(13px); // 13px
+      margin-right: rem(13); // 13px
 
       @include tablets {
          margin-right: 0;
+         // margin-bottom: rem(35);
       }
    }
 
@@ -22,10 +23,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding-top: rem(50px);
+      padding-top: rem(50);
 
       @include tablets {
-         padding-top: rem(10px);
+         // padding-top: rem(10);
          align-items: center;
          text-align: center;
       }
@@ -33,7 +34,11 @@
 
    &__text {
       font-family: 'lifehack', Arial, Helvetica, sans-serif;
-      font-size: rem(63px); // 63px
+      font-size: rem(65); // 65px
       line-height: 1;
+
+      @include phones {
+         font-size: rem(52);
+      }
    }
 }

@@ -9,6 +9,10 @@
    @include tablets {
       padding: 0 16%;
    }
+
+   @include phones {
+      padding: 0;
+   }
 }
 
 .form__column {
@@ -64,6 +68,13 @@
    margin-bottom: rem(-5px); // -5px
    min-height: rem(112px); // 112px
    resize: none;
+}
+
+.form__row-buttons {
+
+   @include phones {
+      margin: rem(10) auto;
+   }
 }
 
 

@@ -8,14 +8,14 @@ body {
 }
 
 html {
-   font-size: 16px;
+   font-size: $baseFontSize;
 
    @include tablets {
-      font-size: 14px;
+      font-size: 15px;
    }
 
    @include phones {
-      font-size: 12px;
+      font-size: 14px;
    }
 }
 

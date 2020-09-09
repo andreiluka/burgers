@@ -13,13 +13,17 @@
 
 .menu-accordeon__link {
    display: block;
-   width: rem(80px);
+   width: rem(80);
    height: 100%;
    font-family: "Gagalin", Arial, Helvetica, sans-serif;
    text-decoration: none;
    color: inherit;
    float: left;
    position: relative;
+
+   @include tablets {
+      width: 10vw;
+   }
 }
 
 @each $menuimg in (meat-eater, vegetarian, dietary) {
@@ -35,8 +39,12 @@
    transform-origin: 0 0;
    white-space: nowrap;
    position: absolute;
-   top: 93.9%;
+   top: 94%;
    left: 50%;
+
+   @include phones {
+      font-size: 7vw;
+   }
 }
 
 .menu-accordeon__desc {
@@ -45,7 +53,7 @@
    background: rgba(#0e0f0f, 0.9);
    float: left;
    overflow: hidden;
-   padding: 8% 12%;
+
 }
 
 .menu-accordeon__text {
@@ -57,7 +65,13 @@
 .menu-accordeon__item--active {
 
    .menu-accordeon__desc {
-      width: rem(530px);
+      width: rem(512px);
+      padding: 8% 12%;
+
+      @include tablets {
+         width: 64vw;
+         padding: 5vw 5vw;
+      }
    }
 
    .menu-accordeon__text {

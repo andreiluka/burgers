@@ -1,6 +1,10 @@
 .contacts {
    font-style: normal;
 
+   @include phones {
+      margin-bottom: rem(16);
+   }
+
    &__address {
       font-weight: 300;
       margin-bottom: rem(8px);
@@ -13,6 +17,10 @@
       margin-left: 1.5em;
       color: #e45028;
       position: relative;
+
+      &:hover {
+         text-decoration: underline;
+      }
 
       &:before {
          content: '';

@@ -31,17 +31,33 @@
       text-align: center;
       padding: 1.3em 10%;
    }
+
+   @include phones {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
 }
 
 .review__name {
    font-family: "Gagalin", Arial, Helvetica, sans-serif;
    margin-bottom: rem(20px); // 20px
+
+   @include phones {
+      font-size: rem(24);
+   }
 }
 
 .review__text {
    font-weight: 300;
    line-height: 1.714em; // 24px
    margin-bottom: 0.714em; // 10px
+
+   @include phones {
+      display: none;
+   }
 }
 
 .review__button {

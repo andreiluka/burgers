@@ -4,10 +4,21 @@
    align-items: center;
    text-align: center;
 
+   @include phones {
+      flex-direction: row;
+      text-align: left;
+      margin-bottom: 30px;
+   }
+
    &__img {
       width: rem(97px); // 97px
       height: rem(89px); // 89px
       margin-bottom: rem(33px); // 33px
+
+      @include phones {
+         margin-bottom: 0;
+         margin-right: rem(28);
+      }
    }
 
    &__title {

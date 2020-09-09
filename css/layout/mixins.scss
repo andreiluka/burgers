@@ -1,3 +1,22 @@
+// @function rem($px) {
+//    @return $px / 16px+0rem;
+// }
+
+$baseFontSize: 16px;
+
+@function rem($pixels, $context: $baseFontSize) {
+
+   @if (unitless($pixels)) {
+      $pixels: $pixels * 1px;
+   }
+
+   @if (unitless($context)) {
+      $context: $context * 1px;
+   }
+
+   @return $pixels / $context * 1rem;
+}
+
 %clearfix {
 
    &:before,
