@@ -10,27 +10,33 @@
       margin-bottom: rem(8px);
    }
 
-   &__tel {
-      color: inherit;
+   &__tel-icon {
+      width: 12px;
+      height: 11px;
+      fill: $red;
+   }
+
+   &__tel-link {
       text-decoration: none;
       font-weight: 700;
-      margin-left: 1.5em;
-      color: #e45028;
+      margin-left: .2em;
+      color: $red;
       position: relative;
+      transition: 0.3s;
 
       &:hover {
-         text-decoration: underline;
+         color: $orange;
       }
 
-      &:before {
-         content: '';
-         display: block;
-         width: 12px;
-         height: 11px;
-         background: url('../img/phone.png') center center no-repeat;
-         position: absolute;
-         top: 0.21428em;
-         left: -1.42857em;
-      }
+      // &:before {
+      //    content: '';
+      //    display: block;
+      //    width: 12px;
+      //    height: 11px;
+      //    background: url('../img/phone.png') center center no-repeat;
+      //    position: absolute;
+      //    top: 0.21428em;
+      //    left: -1.42857em;
+      // }
    }
 }

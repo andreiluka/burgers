@@ -11,9 +11,9 @@
    }
 
    &__img {
-      width: rem(97px); // 97px
-      height: rem(89px); // 89px
-      margin-bottom: rem(33px); // 33px
+      width: rem(97); // 97px
+      height: rem(89); // 89px
+      margin-bottom: rem(33); // 33px
 
       @include phones {
          margin-bottom: 0;
@@ -23,8 +23,8 @@
 
    &__title {
       font-family: 'lifehack', Arial, Helvetica, sans-serif;
-      font-size: rem(24px); // 24px
-      margin-bottom: rem(20px); // 20px
+      font-size: rem(24); // 24px
+      margin-bottom: rem(20); // 20px
    }
 
    &__text {
@@ -33,9 +33,9 @@
    }
 }
 
-@each $featureimg in (meat, hand, natural) {
+// @each $featureimg in (meat, hand, natural) {
 
-   .feature__img-#{$featureimg} {
-      background: url('../img/#{$featureimg}.png') center center / contain no-repeat;
-   }
-}
+//    .feature__img-#{$featureimg} {
+//       background: url('../img/#{$featureimg}.png') center center / contain no-repeat;
+//    }
+// }

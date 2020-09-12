@@ -572,6 +572,9 @@ footer {
     transform: translateX(-50%);
     -webkit-animation: arrow 2s infinite;
     animation: arrow 2s infinite; }
+  .intro__arrow {
+    width: 1.8125rem;
+    height: 0.875rem; }
 
 @-webkit-keyframes arrow {
   0% {
@@ -619,6 +622,10 @@ footer {
   -ms-flex-align: center;
   align-items: center;
   margin-left: 0.625rem; }
+
+.logo {
+  width: 5.75rem;
+  height: 4.3125rem; }
 
 @media screen and (max-width: 768px) {
   .nav {
@@ -791,15 +798,6 @@ footer {
   .feature__text {
     opacity: 0.8;
     font-weight: 300; }
-
-.feature__img-meat {
-  background: url("../img/meat.png") center center/contain no-repeat; }
-
-.feature__img-hand {
-  background: url("../img/hand.png") center center/contain no-repeat; }
-
-.feature__img-natural {
-  background: url("../img/natural.png") center center/contain no-repeat; }
 
 .team {
   background: url("../img/bg-team.jpg") center top/cover no-repeat;
@@ -1257,19 +1255,16 @@ footer {
 .map {
   background: url("../img/bg-map.jpg") center center/cover no-repeat;
   position: relative; }
-  .map:after, .map:before {
-    content: '';
-    display: block;
+  .map__marker {
     width: 46px;
     height: 57px;
-    background: url("../img/map-marker.png") center center/cover no-repeat;
     position: absolute; }
-  .map:after {
-    top: 30%;
-    left: 43%; }
-  .map:before {
-    top: 50%;
-    left: 54%; }
+    .map__marker-top {
+      top: 30%;
+      left: 43%; }
+    .map__marker-bottom {
+      top: 50%;
+      left: 54%; }
 
 .footer {
   padding: 0.625rem 0;
@@ -1306,48 +1301,37 @@ footer {
   .contacts__address {
     font-weight: 300;
     margin-bottom: 0.5rem; }
-  .contacts__tel {
-    color: inherit;
+  .contacts__tel-icon {
+    width: 12px;
+    height: 11px;
+    fill: #e35028; }
+  .contacts__tel-link {
     text-decoration: none;
     font-weight: 700;
-    margin-left: 1.5em;
-    color: #e45028;
-    position: relative; }
-    .contacts__tel:hover {
-      text-decoration: underline; }
-    .contacts__tel:before {
-      content: '';
-      display: block;
-      width: 12px;
-      height: 11px;
-      background: url("../img/phone.png") center center no-repeat;
-      position: absolute;
-      top: 0.21428em;
-      left: -1.42857em; }
+    margin-left: .2em;
+    color: #e35028;
+    position: relative;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+    .contacts__tel-link:hover {
+      color: #f9b43b; }
 
 .socials__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
-.socials__link {
-  display: block;
+.socials__icon {
   width: 23px;
   height: 23px;
-  background: center center no-repeat;
-  margin: 0 0.625rem 0; }
-
-.socials__link-vk {
-  background: url("../../img/vk.png") center center no-repeat; }
-
-.socials__link-fb {
-  background: url("../../img/fb.png") center center no-repeat; }
-
-.socials__link-inst {
-  background: url("../../img/inst.png") center center no-repeat; }
-
-.socials__link-twitter {
-  background: url("../../img/twitter.png") center center no-repeat; }
+  margin: 0 0.625rem 0;
+  fill: #5a5a5a;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+  .socials__icon:hover {
+    fill: #ffffff; }
 
 .pagination {
   position: fixed;

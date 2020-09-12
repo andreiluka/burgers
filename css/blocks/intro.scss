@@ -12,6 +12,11 @@
       transform: translateX(-50%);
       animation: arrow 2s infinite;
    }
+
+   &__arrow {
+      width: rem(29);
+      height: rem(14);
+   }
 }
 
 @keyframes arrow {
