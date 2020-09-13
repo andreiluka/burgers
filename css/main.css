@@ -1262,9 +1262,15 @@ footer {
     .map__marker-top {
       top: 30%;
       left: 43%; }
-    .map__marker-bottom {
+    .map__marker-middle {
       top: 50%;
-      left: 54%; }
+      left: 50%; }
+    .map__marker-right {
+      top: 60%;
+      left: 80%; }
+    .map__marker-bottom {
+      top: 80%;
+      left: 44%; }
 
 .footer {
   padding: 0.625rem 0;

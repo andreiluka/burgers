@@ -22,9 +22,19 @@
          left: 43%;
       }
 
-      &-bottom {
+      &-middle {
          top: 50%;
-         left: 54%;
+         left: 50%;
+      }
+
+      &-right {
+         top: 60%;
+         left: 80%;
+      }
+
+      &-bottom {
+         top: 80%;
+         left: 44%;
       }
    }
 
