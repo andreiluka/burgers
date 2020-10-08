@@ -34,3 +34,18 @@
       text-decoration: none;
    }
 }
+
+.nav--vertical {
+   .nav__list {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 88vh;
+   }
+
+   .nav__item {
+      &::after {
+         content: none;
+      }
+   }
+}
