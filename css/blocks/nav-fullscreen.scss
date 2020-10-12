@@ -9,19 +9,15 @@
    display: none;
    z-index: 60;
 
-   // .nav__item {
-   //    padding: 1.5em;
-   // }
-
    .nav__link {
       font-size: rem(32);
       padding: 0.5em;
    }
 }
 
-// .nav-fullscreen--active {
-//    display: block;
-  // }
+.nav-fullscreen--active {
+   display: block;
+}
 
 .nav-fullscreen__cross {
    display: flex;
@@ -44,7 +40,7 @@
    &:before {
       transform: rotateZ(90deg);
    }
-   
+
    &:hover {
 
       &,

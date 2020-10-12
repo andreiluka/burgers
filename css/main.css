@@ -660,6 +660,10 @@ footer {
     text-transform: uppercase;
     text-decoration: none; }
 
+@media screen and (max-width: 768px) {
+  .nav--vertical {
+    display: block; } }
+
 .nav--vertical .nav__list {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1061,6 +1065,9 @@ footer {
   color: inherit;
   float: left;
   position: relative; }
+  .menu-accordeon__link:hover .menu-accordeon__name {
+    color: #f9b43b;
+    font-size: 3em; }
   @media screen and (max-width: 768px) {
     .menu-accordeon__link {
       width: 10vw; } }
@@ -1085,7 +1092,10 @@ footer {
   white-space: nowrap;
   position: absolute;
   top: 94%;
-  left: 50%; }
+  left: 50%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
   @media screen and (max-width: 480px) {
     .menu-accordeon__name {
       font-size: 7vw; } }
@@ -1095,7 +1105,10 @@ footer {
   height: 100%;
   background: rgba(14, 15, 15, 0.9);
   float: left;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
 
 .menu-accordeon__text {
   width: 100%;
@@ -1441,6 +1454,9 @@ footer {
   .nav-fullscreen .nav__link {
     font-size: 2rem;
     padding: 0.5em; }
+
+.nav-fullscreen--active {
+  display: block; }
 
 .nav-fullscreen__cross {
   display: -webkit-box;

@@ -36,6 +36,10 @@
 }
 
 .nav--vertical {
+   @include tablets {
+      display: block;
+   }
+
    .nav__list {
       flex-direction: column;
       justify-content: center;
