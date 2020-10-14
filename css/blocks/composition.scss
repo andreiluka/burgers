@@ -1,0 +1,35 @@
+.composition {
+   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+   color: #2f3234;
+   background-color: rgba(#ffffff, 0.9);
+   border-radius: 5px;
+   padding: 20px;
+   position: absolute;
+   top: 0;
+   left: -10000%;
+   opacity: 0;
+   // transition: opacity 5s;
+   // transition-delay: left 0.5s;
+
+   &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+}
+
+.composition__pic {
+   width: 42px;
+   height: 40px;
+   margin-right: 23px;
+}
+
+.composition__name {
+   width: 126px;
+   font-weight: 500;
+}
