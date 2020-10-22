@@ -127,6 +127,79 @@ accoLinkDiet.addEventListener('click', function (e) {
 
 
 
+
+// team-member
+
+function teamMemberActiveRemove() {
+   teamMemberDaniel.classList.remove('team-member--active');
+   teamMemberRichard.classList.remove('team-member--active');
+   teamMemberJake.classList.remove('team-member--active');
+   teamMemberNikolay.classList.remove('team-member--active');
+}
+
+
+var teamMemberDaniel = document.querySelector('#daniel');
+
+teamMemberDaniel.addEventListener('click', function (e) {
+   teamMemberActiveRemove();
+   teamMemberDaniel.classList.add('team-member--active');
+});
+
+var teamMemberRichard = document.querySelector('#richard');
+
+teamMemberRichard.addEventListener('click', function (e) {
+   teamMemberActiveRemove();
+   teamMemberRichard.classList.add('team-member--active');
+});
+
+var teamMemberJake = document.querySelector('#jake');
+
+teamMemberJake.addEventListener('click', function (e) {
+   teamMemberActiveRemove();
+   teamMemberJake.classList.add('team-member--active');
+});
+
+var teamMemberNikolay = document.querySelector('#nikolay');
+
+teamMemberNikolay.addEventListener('click', function (e) {
+   teamMemberActiveRemove();
+   teamMemberNikolay.classList.add('team-member--active');
+});
+
+
+
+
+
+// form
+
+const formBtnSubmit = document.querySelector('.form__btn-submit');
+const formNotification = document.querySelector('.form-notification');
+
+formBtnSubmit.addEventListener('click', function(e) {
+   e.preventDefault();
+
+   
+
+   formNotification.style.display = 'flex';
+});
+
+
+
+
+const formNotificationBtn = document.querySelector('.form-notification__btn');
+
+formNotificationBtn.addEventListener('click', function(e) {
+   e.preventDefault();
+
+   formNotification.style.display = 'none';
+});
+
+
+
+
+
+
+
 // pagination
 
 var pageItem = document.querySelector('.pagination__item');

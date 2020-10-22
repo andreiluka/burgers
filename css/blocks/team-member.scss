@@ -15,7 +15,13 @@
 .team-member__name {
    font-family: 'gagalin', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    margin: 0 0 rem(17px) rem(16px);
+   cursor: pointer;
+   transition: 0.3s;
    position: relative;
+
+   &:hover {
+      color: $orange;
+   }
 
    &:before {
       content: '';
@@ -38,6 +44,7 @@
 .team-member__hidden {
    display: none;
    margin-bottom: rem(20px);
+   transition: 0.5s;
 
    @include tablets {
       flex-direction: column;
@@ -97,6 +104,7 @@
 
    .team-member__name {
       color: $orange;
+      cursor: auto;
 
       &:before {
          top: 0.1em;
