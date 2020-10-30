@@ -260,7 +260,7 @@
                      </div>
                   </div>
                </li>
-               <li id="richard" class="team__item team-member team-member--active">
+               <li id="richard" class="team__item team-member">
                   <h4 class="team-member__name">ричард джеймс</h4>
                   <div class="team-member__hidden">
                      <div class="team-member__avatar">
@@ -469,23 +469,23 @@
                   <div class="form__row">
                      <label class="form__block">
                         <div class="form__block-name">Имя</div>
-                        <input type="text" class="form__block-input" required>
+                        <input name="name" type="text" class="form__block-input" required>
                      </label>
                      <label class="form__block">
                         <div class="form__block-name">Телефон</div>
-                        <input type="tel" class="form__block-input" required>
+                        <input name="phone" type="tel" class="form__block-input" required>
                      </label>
                   </div>
                   <div class="form__row">
                      <label class="form__block">
                         <div class="form__block-name">Улица</div>
-                        <input type="text" class="form__block-input" required>
+                        <input type="text" class="form__block-input">
                      </label>
                   </div>
                   <div class="form__row">
                      <label class="form__block">
                         <div class="form__block-name">Дом</div>
-                        <input type="text" class="form__block-input" required>
+                        <input type="text" class="form__block-input">
                      </label>
                      <label class="form__block">
                         <div class="form__block-name">Корпус</div>
@@ -505,7 +505,8 @@
                   <div class="form__row">
                      <label class="form__block">
                         <div class="form__block-name">Коментарий</div>
-                        <textarea name="text" rows="5" class="form__block-input form__block-textarea"></textarea>
+                        <textarea name="comment" rows="5" class="form__block-input form__block-textarea"
+                           required></textarea>
                      </label>
                   </div>
                   <div class="form__row form__row-buttons">
@@ -651,25 +652,25 @@
          <nav class="nav nav--vertical">
             <ul class="nav__list">
                <li class="nav__item">
-                  <a href="#best_2" id="link-best" class="nav__link">о нас</a>
+                  <a href="#best_2" class="nav__link">о нас</a>
                </li>
                <li class="nav__item">
-                  <a href="#products_3" id="link-product" class="nav__link">бургеры</a>
+                  <a href="#products_3" class="nav__link">бургеры</a>
                </li>
                <li class="nav__item">
-                  <a href="#team_4" id="link-team" class="nav__link">команда</a>
+                  <a href="#team_4" class="nav__link">команда</a>
                </li>
                <li class="nav__item">
-                  <a href="#menu_5" id="link-menu" class="nav__link">меню</a>
+                  <a href="#menu_5" class="nav__link">меню</a>
                </li>
                <li class="nav__item">
-                  <a href="#reviews_6" id="link-reviews" class="nav__link">отзывы</a>
+                  <a href="#reviews_6" class="nav__link">отзывы</a>
                </li>
                <li class="nav__item">
-                  <a href="" id="link-how" class="nav__link">как мы работаем</a>
+                  <a href="#" class="nav__link">как мы работаем</a>
                </li>
                <li class="nav__item">
-                  <a href="#map_9" id="link-map" class="nav__link">контакты</a>
+                  <a href="#map_9" class="nav__link">контакты</a>
                </li>
             </ul>
          </nav>
@@ -677,7 +678,7 @@
 
       <div class="form-notification">
          <div class="form-notification__block">
-            <div class="form-notification__text">Сообщение отправлено</div>
+            <div class="form-notification__text"></div>
             <button type="submit" class="button form-notification__btn">закрыть</button>
          </div>
       </div>

@@ -2,188 +2,158 @@
 
 var navFullscreen = document.querySelector('.nav-fullscreen');
 
-function navFullscreenAdd() {
-   navFullscreen.classList.add('nav-fullscreen--active');
-};
-
-function navFullscreenRemove() {
-   navFullscreen.classList.remove('nav-fullscreen--active');
-}
-
 
 var hamburgerMenu = document.querySelector('.hamburger-menu');
-hamburgerMenu.addEventListener('click', navFullscreenAdd);
+hamburgerMenu.addEventListener('click', function() {
+   navFullscreen.classList.add('nav-fullscreen--active');
+});
+
+const navVertical = document.querySelector('.nav--vertical');
+navVertical.addEventListener('click', function(e) {
+
+   if (e.target.classList.contains('nav__link')) {
+      navFullscreen.classList.remove('nav-fullscreen--active');
+   }
+});
 
 var navFullscreenCross = document.querySelector('.nav-fullscreen__cross');
-navFullscreenCross.addEventListener('click', navFullscreenRemove);
+navFullscreenCross.addEventListener('click', function() {
+   navFullscreen.classList.remove('nav-fullscreen--active');
+});
 
 
-var navLinkBest = document.querySelector('#link-best');
-navLinkBest.addEventListener('click', navFullscreenRemove);
-
-var navLinkProduct = document.querySelector('#link-product');
-navLinkProduct.addEventListener('click', navFullscreenRemove);
-
-var navLinkTeam = document.querySelector('#link-team');
-navLinkTeam.addEventListener('click', navFullscreenRemove);
-
-var navLinkMenu = document.querySelector('#link-menu');
-navLinkMenu.addEventListener('click', navFullscreenRemove);
-
-var navLinkReviews = document.querySelector('#link-reviews');
-navLinkReviews.addEventListener('click', navFullscreenRemove);
-
-var navLinkHow = document.querySelector('#link-how');
-navLinkHow.addEventListener('click', navFullscreenRemove);
-
-var navLinkMap = document.querySelector('#link-map');
-navLinkMap.addEventListener('click', navFullscreenRemove);
-
-
-
-// var navLink = document.querySelector('nav__link');
-
-// navLink.addEventListener('click', function () {
-//    navFullscreen.classList.remove('nav-fullscreen--active');
-// });
-
-// var navI = document.querySelector('#nav__i');
-
-// navI.addEventListener('click', function (e) {
-//    if (e.target && e.target.matches('a.nav__link')) {
-//       // console.log('работает');
-//       navFullscreenRemove();
-//    }
-// });
 
 
 // menu-accordeon
 
-var i = 0;
+const menuAccordeon = document.querySelector('.menu-accordeon');
 
-function itemActiveRemove() {
-   accoItemMeat.classList.remove('menu-accordeon__item--active');
-   accoItemVegan.classList.remove('menu-accordeon__item--active');
-   accoItemDiet.classList.remove('menu-accordeon__item--active');
-   i = 0;
+accordeonMenu();
+
+function accordeonMenu() {
+   let currentActive;
+
+   menuAccordeon.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      if (e.target.classList.contains('menu-accordeon__link') 
+      && e.target.parentNode.classList.contains('menu-accordeon__item--active')) {
+
+         e.target.parentNode.classList.remove('menu-accordeon__item--active');
+
+      } else {
+         if (e.target.classList.contains('menu-accordeon__link')) {
+            if (currentActive) {
+               currentActive.classList.remove('menu-accordeon__item--active');
+            }
+   
+            currentActive = e.target.parentNode;
+            e.target.parentNode.classList.toggle('menu-accordeon__item--active');
+         }
+      }
+
+   });
 }
-
-var accoItemMeat = document.querySelector('#accoItemMeat');
-var accoLinkMeat = document.querySelector('.menu-accordeon__link--meat-eater');
-
-document.getElementsByClassName('menu-accordeon__link--meat-eater')[0].onclick = function () {
-   return ++i;
-   // console.log(++i);
-}
-
-accoLinkMeat.addEventListener('click', function (e) {
-   e.preventDefault();
-
-   if (i < 2) {
-      accoItemMeat.classList.add('menu-accordeon__item--active');
-   } else {
-      itemActiveRemove();
-   }
-});
-
-
-var accoItemVegan = document.querySelector('#accoItemVegan');
-var accoLinkVegan = document.querySelector('.menu-accordeon__link--vegetarian');
-
-document.getElementsByClassName('menu-accordeon__link--vegetarian')[0].onclick = function () {
-   return ++i;
-   // console.log(++i);
-}
-
-accoLinkVegan.addEventListener('click', function (e) {
-   e.preventDefault();
-
-   if (i < 2) {
-      accoItemVegan.classList.add('menu-accordeon__item--active');
-   } else {
-      itemActiveRemove();
-   }
-});
-
-
-var accoItemDiet = document.querySelector('#accoItemDiet');
-var accoLinkDiet = document.querySelector('.menu-accordeon__link--dietary');
-
-document.getElementsByClassName('menu-accordeon__link--dietary')[0].onclick = function () {
-   return ++i;
-   // console.log(++i);
-}
-
-accoLinkDiet.addEventListener('click', function (e) {
-   e.preventDefault();
-
-   if (i < 2) {
-      accoItemDiet.classList.add('menu-accordeon__item--active');
-   } else {
-      itemActiveRemove();
-   }
-});
-
 
 
 
 
 // team-member
 
-function teamMemberActiveRemove() {
-   teamMemberDaniel.classList.remove('team-member--active');
-   teamMemberRichard.classList.remove('team-member--active');
-   teamMemberJake.classList.remove('team-member--active');
-   teamMemberNikolay.classList.remove('team-member--active');
+const teamList = document.querySelector('.team__list');
+
+accordeonTeam();
+
+function accordeonTeam() {
+   let teamMemberFirstActive = document.querySelector('.team-member');
+   teamMemberFirstActive.classList.add('team-member--active');
+   
+   let lastActive = teamMemberFirstActive;
+
+   teamList.addEventListener('click', function(e) {
+      if (e.target.classList.contains('team-member__name')) {
+         if (lastActive) {
+            lastActive.classList.remove('team-member--active');
+         }
+
+         lastActive = e.target.parentNode;
+         e.target.parentNode.classList.toggle('team-member--active');
+      }
+   });
 }
-
-
-var teamMemberDaniel = document.querySelector('#daniel');
-
-teamMemberDaniel.addEventListener('click', function (e) {
-   teamMemberActiveRemove();
-   teamMemberDaniel.classList.add('team-member--active');
-});
-
-var teamMemberRichard = document.querySelector('#richard');
-
-teamMemberRichard.addEventListener('click', function (e) {
-   teamMemberActiveRemove();
-   teamMemberRichard.classList.add('team-member--active');
-});
-
-var teamMemberJake = document.querySelector('#jake');
-
-teamMemberJake.addEventListener('click', function (e) {
-   teamMemberActiveRemove();
-   teamMemberJake.classList.add('team-member--active');
-});
-
-var teamMemberNikolay = document.querySelector('#nikolay');
-
-teamMemberNikolay.addEventListener('click', function (e) {
-   teamMemberActiveRemove();
-   teamMemberNikolay.classList.add('team-member--active');
-});
-
 
 
 
 
 // form
 
+const formOrder = document.querySelector('.form__tag');
 const formBtnSubmit = document.querySelector('.form__btn-submit');
 const formNotification = document.querySelector('.form-notification');
+const formNotificationText = document.querySelector('.form-notification__text');
 
 formBtnSubmit.addEventListener('click', function(e) {
    e.preventDefault();
 
-   
+   if (validateForm(formOrder)) {
+      const formData = {
+         name: formOrder.elements.name.value,
+         phone: formOrder.elements.phone.value,
+         comment: formOrder.elements.comment.value
+      }
 
-   formNotification.style.display = 'flex';
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = 'json';
+      xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+      xhr.setRequestHeader('content-type', 'application/json');
+      xhr.send(JSON.stringify(formData));
+      xhr.addEventListener('load', function() {
+         if (xhr.response.status) {
+            formNotificationText.textContent = 'Сообщение отправлено';
+         } else {
+            formNotificationText.textContent = 'Сообщение не отправлено, повторите попытку позже';
+         }
+      });
+      formNotification.style.display = 'flex';
+      formOrder.reset();
+   }
 });
 
+function validateForm(form) {
+   let valid = true;
 
+   if (!validateField(form.elements.name)) {
+      valid = false;
+   }
+
+   if (!validateField(form.elements.phone)) {
+      valid = false;
+   }
+
+   if (!validateField(form.elements.comment)) {
+      valid = false;
+   }
+
+   return valid;
+}
+
+function validateField(field) {
+   if (!field.checkValidity()) {
+      field.classList.add('form__block-input--error');
+
+      return false;
+   } else {
+      return true;
+   }
+}
+
+for (let i = 0; i < formOrder.length; i++) {
+   const elementForm = formOrder[i];
+
+   elementForm.addEventListener('focus', function() {
+      elementForm.classList.remove('form__block-input--error');
+   });
+}
 
 
 const formNotificationBtn = document.querySelector('.form-notification__btn');
@@ -193,8 +163,6 @@ formNotificationBtn.addEventListener('click', function(e) {
 
    formNotification.style.display = 'none';
 });
-
-
 
 
 

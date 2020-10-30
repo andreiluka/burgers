@@ -676,7 +676,8 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 88vh; }
+  height: 88vh;
+  margin-right: 0; }
 
 .nav--vertical .nav__item::after {
   content: none; }
@@ -1451,6 +1452,10 @@ footer {
     .form__block-input:focus {
       border: 2px solid #f9b43b; }
 
+.form__block-input--error {
+  -webkit-box-shadow: inset red 0 0 4px 4px;
+  box-shadow: inset red 0 0 4px 4px; }
+
 .form__block-textarea {
   margin-bottom: -0.3125rem;
   min-height: 7rem;
@@ -1808,4 +1813,5 @@ footer {
 
 .form-notification__text {
   font-weight: 300;
-  margin-bottom: 0.9375rem; }
+  margin-bottom: 0.9375rem;
+  text-align: center; }

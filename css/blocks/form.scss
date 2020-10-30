@@ -64,9 +64,13 @@
 
 }
 
+.form__block-input--error {
+   box-shadow: inset red 0 0 4px 4px;
+}
+
 .form__block-textarea {
-   margin-bottom: rem(-5px); // -5px
-   min-height: rem(112px); // 112px
+   margin-bottom: rem(-5); // -5px
+   min-height: rem(112); // 112px
    resize: none;
 }
 
