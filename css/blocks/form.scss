@@ -3,6 +3,10 @@
    background: url('../img/bg-form.jpg') center center / cover no-repeat;
 }
 
+.form * {
+   outline: none;
+}
+
 .form__tag {
    margin-top: rem(14px); // 14px
 

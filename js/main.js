@@ -170,10 +170,36 @@ formNotificationBtn.addEventListener('click', function(e) {
 
 // pagination
 
-var pageItem = document.querySelector('.pagination__item');
-var pageLink = document.querySelector('#page');
+const pageList = document.querySelectorAll('.pagination__item');
+// var pageLink = document.querySelector('#page');
 
-pageLink.addEventListener('click', function () {
-   console.log('go');
-   pageItem.classList.add('pagination__item--active');
-});
+for (const pageItem of pageList) {
+
+   pageItem.addEventListener('click', function () {
+      pageItem.classList.add('pagination__item--active');
+   });
+}
+
+
+
+// const teamList = document.querySelector('.team__list');
+
+// accordeonTeam();
+
+// function accordeonTeam() {
+//    let teamMemberFirstActive = document.querySelector('.team-member');
+//    teamMemberFirstActive.classList.add('team-member--active');
+   
+//    let lastActive = teamMemberFirstActive;
+
+//    teamList.addEventListener('click', function(e) {
+//       if (e.target.classList.contains('team-member__name')) {
+//          if (lastActive) {
+//             lastActive.classList.remove('team-member--active');
+//          }
+
+//          lastActive = e.target.parentNode;
+//          e.target.parentNode.classList.toggle('team-member--active');
+//       }
+//    });
+// }
