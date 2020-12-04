@@ -28,31 +28,36 @@ navFullscreenCross.addEventListener('click', function() {
 
 const menuAccordeon = document.querySelector('.menu-accordeon');
 
+const menuAccordeonLinks = document.querySelectorAll('.menu-accordeon__link')
+
 accordeonMenu();
 
 function accordeonMenu() {
    let currentActive;
 
-   menuAccordeon.addEventListener('click', function(e) {
-      e.preventDefault();
+   for (let menuAccordeonLink of menuAccordeonLinks) {
 
-      if (e.target.classList.contains('menu-accordeon__link') 
-      && e.target.parentNode.classList.contains('menu-accordeon__item--active')) {
-
-         e.target.parentNode.classList.remove('menu-accordeon__item--active');
-
-      } else {
-         if (e.target.classList.contains('menu-accordeon__link')) {
-            if (currentActive) {
-               currentActive.classList.remove('menu-accordeon__item--active');
+      menuAccordeonLink.addEventListener('click', function(e) {
+         e.preventDefault();
+   
+         if (menuAccordeonLink.parentNode.classList.contains('menu-accordeon__item--active')) {
+   
+            menuAccordeonLink.parentNode.classList.remove('menu-accordeon__item--active');
+   
+         } else {
+            
+            if (menuAccordeonLink.classList.contains('menu-accordeon__link')) {
+   
+               if (currentActive) {
+                  currentActive.classList.remove('menu-accordeon__item--active');
+               }
             }
    
-            currentActive = e.target.parentNode;
-            e.target.parentNode.classList.toggle('menu-accordeon__item--active');
+            currentActive = menuAccordeonLink.parentNode;
+            menuAccordeonLink.parentNode.classList.toggle('menu-accordeon__item--active');
          }
-      }
-
-   });
+      });
+   }
 }
 
 
@@ -81,6 +86,31 @@ function accordeonTeam() {
       }
    });
 }
+
+
+
+// products
+
+$(document).ready(function () {
+
+   var slider = $('.products__list').bxSlider({
+      controls: false,
+      pager: false,
+      slideMargin: 50
+   });
+
+   $('.products-slider__arrow-left').on('click', function (e) {
+      e.preventDefault();
+
+      slider.goToPrevSlide();
+   });
+
+   $('.products-slider__arrow-right').on('click', function (e) {
+      e.preventDefault();
+
+      slider.goToNextSlide();
+   });
+});
 
 
 
@@ -167,39 +197,111 @@ formNotificationBtn.addEventListener('click', function(e) {
 
 
 
+// OnePageScroll
 
-// pagination
+$(document).ready(function() {
 
-const pageList = document.querySelectorAll('.pagination__item');
-// var pageLink = document.querySelector('#page');
+   function coloringDots(index) {
+      $('.wrapper')
+         .find('.pagination__item')
+         .eq(index)
+         .addClass('pagination__item--active')
+         .siblings()
+         .removeClass('pagination__item--active');
+   };
 
-for (const pageItem of pageList) {
+   function generateDots() {
+      $('.section').each(function () {
+         var dotPagination = $('<li>', {
+            attr: {
+               class: 'pagination__item'
+            },
+            html: '<div class="pagination__numb"></div>'
+         });
 
-   pageItem.addEventListener('click', function () {
-      pageItem.classList.add('pagination__item--active');
+         $('.pagination__list').append(dotPagination);
+      });
+      
+      $('.pagination__item').first().addClass('pagination__item--active');
+   };
+
+   generateDots();
+
+   $('body').on('click', '.pagination__item', function () {
+      var $this = $(this),
+         container = $this.closest('.wrapper'),
+         index = $this.index();
+
+      moveSlide(container, index);
+      coloringDots(index);
    });
-}
 
+   $('.nav__link, .button').on('click', function () {
+      const $this = $(this),
+         activeSection = $($this.attr('href')),
+         index = activeSection.index('.section');
 
-
-// const teamList = document.querySelector('.team__list');
-
-// accordeonTeam();
-
-// function accordeonTeam() {
-//    let teamMemberFirstActive = document.querySelector('.team-member');
-//    teamMemberFirstActive.classList.add('team-member--active');
+      activeSection
+         .addClass('section__active')
+         .siblings()
+         .removeClass('section__active');
+         
+      console.log(activeSection);
+      console.log(index);
+      coloringDots(index);
+   });
    
-//    let lastActive = teamMemberFirstActive;
+   function moveSlide(container, sectionNum) {
 
-//    teamList.addEventListener('click', function(e) {
-//       if (e.target.classList.contains('team-member__name')) {
-//          if (lastActive) {
-//             lastActive.classList.remove('team-member--active');
-//          }
+      var timeNow = new Date().getTime(),
+         sections = container.find('.section'),
+         activeSection = sections.filter('.section__active'),
+         reqItem = sections.eq(sectionNum),
+         reqIndex = reqItem.index(),
+         list = container.find('.sections-list'),
+         duration = 700,
+         settings = $.extend({}),
+         lastAnimation = 0;
 
-//          lastActive = e.target.parentNode;
-//          e.target.parentNode.classList.toggle('team-member--active');
-//       }
-//    });
-// }
+      if (reqItem.length) {
+         if(timeNow - lastAnimation < duration + settings.animationTime) {
+            e.preventDefault();
+            return;
+         } else {
+            list.animate({
+               'top': -reqIndex * 100 + '%'
+            }, duration, function () {
+               activeSection.removeClass('section__active');
+               reqItem.addClass('section__active');
+               coloringDots(sectionNum);
+            });
+            lastAnimation = timeNow;
+         }
+      }
+   };
+      
+   $('.wrapper').on('wheel', function (e) {
+      e.preventDefault();
+
+      // e = e || window.event;
+      var delta = e.originalEvent.deltaY,
+         container = $('.wrapper'),  // возможно нужно вставить еще обертку, либо вешать колесо на body
+         sections = container.find('.section'),
+         activeItem = sections.filter('.section__active'),
+         existedItem, edgeItem, reqItem;
+
+      if (delta >= 100) {
+         existedItem = activeItem.next();
+         edgeItem = sections.first();
+      }
+
+      if (delta <= -100) {
+         existedItem = activeItem.prev();
+         edgeItem = sections.last();
+      }
+
+      reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+      moveSlide(container, reqItem);
+      console.log(delta);
+   });
+});

@@ -78,8 +78,13 @@
       padding: 8% 12%;
 
       @include tablets {
-         width: 64vw;
+         width: 66vw;
          padding: 5vw 5vw;
+      }
+
+      @include phones {
+         width: 64vw;
+         padding: 4vw 4vw;
       }
    }
 

@@ -54,6 +54,14 @@
    font-weight: 300;
    line-height: 1.714em; // 24px
    margin-bottom: 0.714em; // 10px
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 14;
+   -webkit-box-orient: vertical;
+
+   @include tablets {
+      -webkit-line-clamp: 5;
+   }
 
    @include phones {
       display: none;

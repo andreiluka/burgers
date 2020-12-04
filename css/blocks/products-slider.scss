@@ -1,6 +1,7 @@
 .products-slider {
    display: flex;
    align-items: center;
+   width: 100%;
 }
 
 .products-slider__arrow-left,
@@ -41,4 +42,11 @@
 
 .products-slider__arrow-next {
    transform: rotate(-90deg);
+}
+
+.products-slider__container {
+   display: flex;
+   justify-content: flex-start;
+   width: 95%;
+   overflow: hidden;
 }

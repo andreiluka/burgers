@@ -74,6 +74,15 @@ footer {
    // max-width: 940px + 20px;
    min-height: 100%;
    overflow: hidden;
+   position: relative;
+}
+
+.sections-list {
+   width: 100%;
+   min-height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
 }
 
 .section {

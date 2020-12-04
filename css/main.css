@@ -462,7 +462,15 @@ footer {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+
+.sections-list {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 .section {
   height: 100vh;
@@ -828,6 +836,11 @@ footer {
   background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%);
   color: #ffffff;
   position: relative; }
+  .products__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative; }
 
 .product__container {
   display: -webkit-box;
@@ -1042,7 +1055,8 @@ footer {
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  width: 100%; }
 
 .products-slider__arrow-left,
 .products-slider__arrow-right {
@@ -1079,6 +1093,16 @@ footer {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg); }
+
+.products-slider__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: 95%;
+  overflow: hidden; }
 
 .team {
   background: url("../img/bg-team.jpg") center top/cover no-repeat;
@@ -1298,7 +1322,14 @@ footer {
 .review__text {
   font-weight: 300;
   line-height: 1.714em;
-  margin-bottom: 0.714em; }
+  margin-bottom: 0.714em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 14;
+  -webkit-box-orient: vertical; }
+  @media screen and (max-width: 768px) {
+    .review__text {
+      -webkit-line-clamp: 5; } }
   @media screen and (max-width: 480px) {
     .review__text {
       display: none; } }
@@ -1391,8 +1422,12 @@ footer {
   padding: 8% 12%; }
   @media screen and (max-width: 768px) {
     .menu-accordeon__item--active .menu-accordeon__desc {
-      width: 64vw;
+      width: 66vw;
       padding: 5vw 5vw; } }
+  @media screen and (max-width: 480px) {
+    .menu-accordeon__item--active .menu-accordeon__desc {
+      width: 64vw;
+      padding: 4vw 4vw; } }
 
 .menu-accordeon__item--active .menu-accordeon__text {
   display: block; }
@@ -1685,14 +1720,15 @@ footer {
 
 .pagination__item {
   display: block;
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+  cursor: pointer; }
 
 .pagination__numb {
   display: block;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ccc;
+  background: #8a8f94;
   position: relative; }
   .pagination__numb:last-child {
     margin-bottom: 0; }
@@ -1701,7 +1737,7 @@ footer {
     display: block;
     width: 16px;
     height: 16px;
-    border: 1px solid #cccccc;
+    border: 1px solid #8a8f94;
     border-radius: 50%;
     position: absolute;
     top: 50%;
