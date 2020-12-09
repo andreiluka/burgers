@@ -259,7 +259,7 @@ $(document).ready(function() {
          reqItem = sections.eq(sectionNum),
          reqIndex = reqItem.index(),
          list = container.find('.sections-list'),
-         duration = 700,
+         duration = 200,
          settings = $.extend({}),
          lastAnimation = 0;
 
@@ -283,9 +283,8 @@ $(document).ready(function() {
    $('.wrapper').on('wheel', function (e) {
       e.preventDefault();
 
-      // e = e || window.event;
       var delta = e.originalEvent.deltaY,
-         container = $('.wrapper'),  // возможно нужно вставить еще обертку, либо вешать колесо на body
+         container = $('.wrapper'),
          sections = container.find('.section'),
          activeItem = sections.filter('.section__active'),
          existedItem, edgeItem, reqItem;
@@ -294,14 +293,61 @@ $(document).ready(function() {
          existedItem = activeItem.next();
          edgeItem = sections.first();
       }
-
+      
       if (delta <= -100) {
          existedItem = activeItem.prev();
          edgeItem = sections.last();
       }
-
+      
       reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
       moveSlide(container, reqItem);
       console.log(delta);
    });
+
+
+
+   // TouchSwipe
+
+   $('body').swipe( {
+      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+         console.log('You swiped ' + direction + ' ' + distance);
+
+         var container = $('.wrapper'),
+            sections = container.find('.section'),
+            activeItem = sections.filter('.section__active'),
+            reqItem;
+         
+         if (direction == 'up') {
+            reqItem = activeItem.next().index();
+
+         } else if (direction == 'down') {
+            reqItem = activeItem.prev().index();
+         }
+
+         moveSlide(container, reqItem);
+      }
+   });
+
+
+
+   // MobileDetect
+
+   var md = new MobileDetect(window.navigator.userAgent);
+
+   console.log( md.mobile() );          // 'Sony'
+   console.log( md.phone() );           // 'Sony'
+   console.log( md.tablet() );          // null
+   console.log( md.userAgent() );       // 'Safari'
+   console.log( md.os() );              // 'AndroidOS'
+   console.log( md.is('iPhone') );      // false
+   console.log( md.is('bot') );         // false
+   console.log( md.version('Webkit') );         // 534.3
+   console.log( md.versionStr('Build') );       // '4.1.A.0.562'
+   console.log( md.match('playstation|xbox') ); // false
+
+   // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+
+   //    alert("Вы используете мобильное устройство (телефон или планшет).")
+  
+   // } else alert("Вы используете ПК.");
 });
