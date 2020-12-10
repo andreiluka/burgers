@@ -1486,7 +1486,8 @@ footer {
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
     border: 2px solid #d1cfcb;
     border-radius: 0.3125rem;
-    padding: 0.5714em 1.2857em; }
+    padding: 0.5714em 1.2857em;
+    z-index: 100; }
     .form__block-input:focus {
       border: 2px solid #f9b43b; }
 

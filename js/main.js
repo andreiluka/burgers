@@ -309,7 +309,7 @@ $(document).ready(function() {
    // TouchSwipe
 
    $('body').swipe( {
-      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+      swipe:function(event, direction, distance) {
          console.log('You swiped ' + direction + ' ' + distance);
 
          var container = $('.wrapper'),
@@ -325,7 +325,9 @@ $(document).ready(function() {
          }
 
          moveSlide(container, reqItem);
-      }
+      },
+      
+      excludedElements: "label, button, input, select, textarea, .noSwipe"
    });
 
 
