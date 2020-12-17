@@ -232,7 +232,7 @@ $(document).ready(function() {
          container = $this.closest('.wrapper'),
          index = $this.index();
 
-      moveSlide(container, index);
+      moveSection(container, index);
       coloringDots(index);
    });
 
@@ -246,12 +246,12 @@ $(document).ready(function() {
          .siblings()
          .removeClass('section__active');
          
-      console.log(activeSection);
-      console.log(index);
+      // console.log(activeSection);
+      // console.log(index);
       coloringDots(index);
    });
    
-   function moveSlide(container, sectionNum) {
+   function moveSection(container, sectionNum) {
 
       var timeNow = new Date().getTime(),
          sections = container.find('.section'),
@@ -289,18 +289,18 @@ $(document).ready(function() {
          activeItem = sections.filter('.section__active'),
          existedItem, edgeItem, reqItem;
 
-      if (delta >= 100) {
+      if (delta > 0) {
          existedItem = activeItem.next();
          edgeItem = sections.first();
       }
       
-      if (delta <= -100) {
+      if (delta < 0) {
          existedItem = activeItem.prev();
          edgeItem = sections.last();
       }
       
       reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
-      moveSlide(container, reqItem);
+      moveSection(container, reqItem);
       console.log(delta);
    });
 
@@ -308,7 +308,8 @@ $(document).ready(function() {
 
    // TouchSwipe
 
-   $('body').swipe( {
+   $('body').swipe({
+      
       swipe:function(event, direction, distance) {
          console.log('You swiped ' + direction + ' ' + distance);
 
@@ -324,9 +325,9 @@ $(document).ready(function() {
             reqItem = activeItem.prev().index();
          }
 
-         moveSlide(container, reqItem);
+         moveSection(container, reqItem);
       },
-      
+
       excludedElements: "label, button, input, select, textarea, .noSwipe"
    });
 
@@ -346,10 +347,4 @@ $(document).ready(function() {
    console.log( md.version('Webkit') );         // 534.3
    console.log( md.versionStr('Build') );       // '4.1.A.0.562'
    console.log( md.match('playstation|xbox') ); // false
-
-   // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-
-   //    alert("Вы используете мобильное устройство (телефон или планшет).")
-  
-   // } else alert("Вы используете ПК.");
 });
