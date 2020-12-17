@@ -280,7 +280,8 @@ $(document).ready(function() {
       }
    };
       
-   $('.wrapper').on('wheel', function (e) {
+   $('.wrapper').on({
+      wheel: function (e) {
       e.preventDefault();
 
       var delta = e.originalEvent.deltaY,
@@ -301,50 +302,62 @@ $(document).ready(function() {
       
       reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
       moveSection(container, reqItem);
-      console.log(delta);
+      // console.log(delta);
+      },
+
+      touchmove: e => e.preventDefault()
    });
 
 
+   // Управление клавишами
 
-   // TouchSwipe
+   $(document).on('keydown', function (e) {
+      var container = $('.wrapper'),
+         sections = container.find('.section'),
+         activeItem = sections.filter('.section__active');
 
-   $('body').swipe({
-      
-      swipe:function(event, direction, distance) {
-         console.log('You swiped ' + direction + ' ' + distance);
-
-         var container = $('.wrapper'),
-            sections = container.find('.section'),
-            activeItem = sections.filter('.section__active'),
-            reqItem;
-         
-         if (direction == 'up') {
-            reqItem = activeItem.next().index();
-
-         } else if (direction == 'down') {
-            reqItem = activeItem.prev().index();
-         }
-
-         moveSection(container, reqItem);
-      },
-
-      excludedElements: "label, button, input, select, textarea, .noSwipe"
+      switch(e.keyCode) {
+         case 40:
+            moveSection(container, activeItem.next().index());
+            break;
+         case 38:
+            moveSection(container, activeItem.prev().index());
+            break;
+      }
    });
 
 
 
    // MobileDetect
 
-   var md = new MobileDetect(window.navigator.userAgent);
+   const md = new MobileDetect(window.navigator.userAgent);
+   const isMobile = md.mobile();
 
-   console.log( md.mobile() );          // 'Sony'
-   console.log( md.phone() );           // 'Sony'
-   console.log( md.tablet() );          // null
-   console.log( md.userAgent() );       // 'Safari'
-   console.log( md.os() );              // 'AndroidOS'
-   console.log( md.is('iPhone') );      // false
-   console.log( md.is('bot') );         // false
-   console.log( md.version('Webkit') );         // 534.3
-   console.log( md.versionStr('Build') );       // '4.1.A.0.562'
-   console.log( md.match('playstation|xbox') ); // false
+   if (isMobile) {
+
+      // TouchSwipe
+
+      $('body').swipe({
+         
+         swipe:function(event, direction, distance) {
+            console.log('You swiped ' + direction + ' ' + distance);
+   
+            var container = $('.wrapper'),
+               sections = container.find('.section'),
+               activeItem = sections.filter('.section__active'),
+               reqItem;
+            
+            if (direction == 'up') {
+               reqItem = activeItem.next().index();
+   
+            } else if (direction == 'down') {
+               reqItem = activeItem.prev().index();
+            }
+   
+            moveSection(container, reqItem);
+         },
+   
+         excludedElements: "label, button, input, select, textarea, .noSwipe"
+      });
+   }
 });
