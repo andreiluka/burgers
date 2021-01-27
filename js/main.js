@@ -24,10 +24,61 @@ navFullscreenCross.addEventListener('click', function() {
 
 
 
+// products
+
+$(document).ready(function () {
+
+   var slider = $('.products__list').bxSlider({
+      controls: false,
+      pager: false,
+      slideMargin: 50
+   });
+
+   $('.products-slider__arrow-left').on('click', function (e) {
+      e.preventDefault();
+
+      slider.goToPrevSlide();
+   });
+
+   $('.products-slider__arrow-right').on('click', function (e) {
+      e.preventDefault();
+
+      slider.goToNextSlide();
+   });
+});
+
+
+
+
+// team-member
+
+const teamList = document.querySelector('.team__list');
+
+accordeonTeam();
+
+function accordeonTeam() {
+   let teamMemberFirstActive = document.querySelector('.team-member');
+   teamMemberFirstActive.classList.add('team-member--active');
+   
+   let lastActive = teamMemberFirstActive;
+
+   teamList.addEventListener('click', function(e) {
+      if (e.target.classList.contains('team-member__name')) {
+         if (lastActive) {
+            lastActive.classList.remove('team-member--active');
+         }
+
+         lastActive = e.target.parentNode;
+         e.target.parentNode.classList.toggle('team-member--active');
+      }
+   });
+}
+
+
+
 // menu-accordeon
 
 const menuAccordeon = document.querySelector('.menu-accordeon');
-
 const menuAccordeonLinks = document.querySelectorAll('.menu-accordeon__link')
 
 accordeonMenu();
@@ -60,57 +111,6 @@ function accordeonMenu() {
    }
 }
 
-
-
-
-// team-member
-
-const teamList = document.querySelector('.team__list');
-
-accordeonTeam();
-
-function accordeonTeam() {
-   let teamMemberFirstActive = document.querySelector('.team-member');
-   teamMemberFirstActive.classList.add('team-member--active');
-   
-   let lastActive = teamMemberFirstActive;
-
-   teamList.addEventListener('click', function(e) {
-      if (e.target.classList.contains('team-member__name')) {
-         if (lastActive) {
-            lastActive.classList.remove('team-member--active');
-         }
-
-         lastActive = e.target.parentNode;
-         e.target.parentNode.classList.toggle('team-member--active');
-      }
-   });
-}
-
-
-
-// products
-
-$(document).ready(function () {
-
-   var slider = $('.products__list').bxSlider({
-      controls: false,
-      pager: false,
-      slideMargin: 50
-   });
-
-   $('.products-slider__arrow-left').on('click', function (e) {
-      e.preventDefault();
-
-      slider.goToPrevSlide();
-   });
-
-   $('.products-slider__arrow-right').on('click', function (e) {
-      e.preventDefault();
-
-      slider.goToNextSlide();
-   });
-});
 
 
 
@@ -236,7 +236,7 @@ function dragPlay(e) {
 
    const clickedPercent = (button.x / (range.width - button.width)) * 100;
    const newPlayerTime = (player.getDuration() / 100) * clickedPercent;
-   
+
    player.seekTo(newPlayerTime);
 }
 
@@ -375,6 +375,8 @@ $('.player__splash').on('click', e => {
 
 
 
+
+
 // form
 
 const formOrder = document.querySelector('.form__tag');
@@ -453,6 +455,90 @@ formNotificationBtn.addEventListener('click', function(e) {
 
    formNotification.style.display = 'none';
 });
+
+
+
+
+
+// Yandex.Map
+
+ymaps.ready(init);
+
+var placemarks = [
+   {
+      latitude: 59.97,
+      longitude: 30.31,
+      hintContent: '<div class="map__hint">ул. Литераторов, д.19</div>',
+      balloonContent: [
+         '<div class="map__balloon">',
+         // '<img class="map__balloon-img" scr="../img/logo.png" alt="Бургер"/>',
+         'Работаем с 10:00 до 19:00, без выходных. ',
+         'Вход со двора',
+         '</div>'
+      ]
+   },
+   {
+      latitude: 59.94,
+      longitude: 30.25,
+      hintContent: '<div class="map__hint">Малый проспект В.О., д.64</div>',
+      balloonContent: [
+         '<div class="map__balloon">',
+         'Работаем с 11:00 до 20:00, без выходных. ',
+         'Удобная парковка',
+         '</div>'
+      ]
+   },
+   {
+      latitude: 59.93,
+      longitude: 30.34,
+      hintContent: '<div class="map__hint">наб. реки Фонтанки, д.56</div>',
+      balloonContent: [
+         '<div class="map__balloon">',
+         'Работаем с 12:00 до 23:00, без выходных. ',
+         'Приходите, будем рады!',
+         '</div>'
+      ]
+   }
+]
+
+var geoObjects = [];
+
+function init() {
+   var map = new ymaps.Map('map_9', {
+      center: [59.94, 30.32],
+      zoom: 12,
+      controls: ['zoomControl'],
+      behaviors: ['drag']
+   });
+
+   for (var i = 0; i < placemarks.length; i++) { 
+      
+      geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude], {
+         hintContent: placemarks[i].hintContent,
+         balloonContent: placemarks[i].balloonContent.join('')
+      }, 
+      {
+         iconLayout: 'default#image',
+         iconImageHref: '../img/map-marker.png',
+         iconImageSize: [46, 57],
+         iconImageOffset: [-23, -57]
+      });
+   }
+
+   var clusterer = new ymaps.Clusterer({
+      clusterIcons: [
+         {
+            href: '../img/dark-burger.png',
+            size: [50, 40],
+            offset: [-25, -20]
+         }
+      ],
+      clusterIconContentLayout: null
+   });
+   
+   map.geoObjects.add(clusterer);
+   clusterer.add(geoObjects);
+}
 
 
 
