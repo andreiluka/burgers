@@ -1618,7 +1618,8 @@ footer {
       padding: 0 16%; } }
   @media screen and (max-width: 480px) {
     .form__tag {
-      padding: 0; } }
+      padding: 0;
+      margin-top: 0; } }
 
 .form__column {
   display: -webkit-inline-box;
@@ -1643,6 +1644,9 @@ footer {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1.25rem; }
+  @media screen and (max-width: 480px) {
+    .form__row {
+      margin-bottom: 0.625rem; } }
 
 .form__block {
   -webkit-box-flex: 1;
@@ -1673,7 +1677,7 @@ footer {
 
 @media screen and (max-width: 480px) {
   .form__row-buttons {
-    margin: 0.625rem auto; } }
+    margin: 0.4375rem auto; } }
 
 .form__radio {
   display: -webkit-box;
@@ -1754,6 +1758,10 @@ footer {
 @media screen and (max-width: 768px) {
   .form__btn {
     margin-top: 1.875rem; } }
+
+@media screen and (max-width: 768px) {
+  .form__btn {
+    margin-top: 0.625rem; } }
 
 .form__btn-reset {
   color: inherit;
