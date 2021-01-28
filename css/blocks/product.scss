@@ -71,7 +71,7 @@
 
    @include phones {
       top: 0;
-      left: rem(-20);
+      left: rem(-14); // 20-6
       margin-bottom: 15px;
    }
 }

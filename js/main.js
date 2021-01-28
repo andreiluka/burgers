@@ -123,8 +123,8 @@ let player;
 
 function onYouTubeIframeAPIReady() {
    player = new YT.Player('yt-player', {
-      height: '405',          // по макету
-      width: '660',           // по макету
+      height: '100%',          // по макету 405
+      width: '100%',           // по макету 640
       videoId: 'zmg_jOwa9Fc',
       playerVars: {
          autoplay:0,

@@ -474,7 +474,8 @@ footer {
 
 .section {
   height: 100%;
-  min-height: 40.625rem; }
+  min-height: 40.625rem;
+  overflow: hidden; }
 
 .container {
   max-width: 940px;
@@ -984,7 +985,7 @@ footer {
   @media screen and (max-width: 480px) {
     .product__ingredients-block {
       top: 0;
-      left: -1.25rem;
+      left: -0.875rem;
       margin-bottom: 15px; } }
 
 .product__ingredients-icon {
@@ -1445,8 +1446,18 @@ footer {
   background: url("../img/bg-how.jpg") center center/cover no-repeat;
   color: #2f3234; }
 
+.player {
+  width: 100%;
+  max-width: 40rem; }
+
 .player__wrapper {
-  position: relative; }
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 23.3125rem; }
+  @media screen and (max-width: 480px) {
+    .player__wrapper {
+      max-height: 24.375rem; } }
 
 .player__wrapper--active .player__splash {
   display: none; }
@@ -1457,15 +1468,14 @@ footer {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0.8%;
+  bottom: 0;
   background: url("../img/bg-video.jpg") center center/cover no-repeat; }
 
 .player__controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 15px;
-  margin-top: -3px;
+  padding: 0 0.9375rem;
   background-color: #3e3e3e; }
 
 .player__start {
@@ -1473,7 +1483,7 @@ footer {
   position: relative;
   padding: 0; }
   .player__start.paused {
-    margin: 4px 15px 5px 0;
+    margin: 4px 0.9375rem 5px 0;
     width: 15px;
     height: 23px; }
     .player__start.paused:after, .player__start.paused:before {
@@ -1493,7 +1503,7 @@ footer {
       display: none; }
 
 .player__start-ico {
-  margin: 4px 15px 1px 0;
+  margin: 4px 0.9375rem 1px 0;
   width: 15px;
   height: 23px; }
 
@@ -1507,7 +1517,7 @@ footer {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin-right: 20px;
+  margin-right: 1.0625rem;
   -ms-flex-item-align: center;
   align-self: center;
   height: 3px;
@@ -1527,7 +1537,7 @@ footer {
 
 .player__volume {
   outline: none;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
   position: relative; }
   .player__volume:hover .player__volume-block {
     display: block !important; }
