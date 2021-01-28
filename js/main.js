@@ -686,7 +686,7 @@ $(document).ready(function() {
       $('body').swipe({
          
          swipe:function(event, direction, distance) {
-            console.log('You swiped ' + direction + ' ' + distance);
+            // console.log('You swiped ' + direction + ' ' + distance);
    
             var container = $('.wrapper'),
                sections = container.find('.section'),

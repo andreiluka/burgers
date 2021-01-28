@@ -32,6 +32,10 @@
          margin: 0;
       }
    }
+
+   @include phones {
+      margin-bottom: 3vw; // rem(8)
+   }
 }
 
 .product__column-block {
@@ -123,9 +127,10 @@
    }
 
    @include phones {
-      font-size: rem(57.143);
-      line-height: 1.05;
+      font-size: rem(57);
+      // line-height: 1.05;
       padding: 0 3px;
+      margin-bottom: 3vw;
    }
 }
 
@@ -134,6 +139,11 @@
    font-weight: 300;
    line-height: 1.72;
    margin-bottom: rem(33);
+
+   @include phones {
+      line-height: 1.5;
+      margin-bottom: 4vw;
+   }
 }
 
 .product__order {

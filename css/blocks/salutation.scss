@@ -30,6 +30,10 @@
          align-items: center;
          text-align: center;
       }
+
+      @include phones {
+         padding-top: rem(30);
+      }
    }
 
    &__text {
