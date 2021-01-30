@@ -519,7 +519,7 @@ function init() {
       }, 
       {
          iconLayout: 'default#image',
-         iconImageHref: '../img/map-marker.png',
+         iconImageHref: '../../img/map-marker.png',
          iconImageSize: [46, 57],
          iconImageOffset: [-23, -57]
       });
@@ -528,7 +528,7 @@ function init() {
    var clusterer = new ymaps.Clusterer({
       clusterIcons: [
          {
-            href: '../img/dark-burger.png',
+            href: '../../img/dark-burger.png',
             size: [50, 40],
             offset: [-25, -20]
          }
