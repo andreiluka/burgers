@@ -1,23 +1,22 @@
 // nav-fullscreen
 
-var navFullscreen = document.querySelector('.nav-fullscreen');
+const navFullscreen = document.querySelector('.nav-fullscreen');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navVertical = document.querySelector('.nav--vertical');
+const navFullscreenCross = document.querySelector('.nav-fullscreen__cross');
 
-
-var hamburgerMenu = document.querySelector('.hamburger-menu');
-hamburgerMenu.addEventListener('click', function() {
+hamburgerMenu.addEventListener('click', function () {
    navFullscreen.classList.add('nav-fullscreen--active');
 });
 
-const navVertical = document.querySelector('.nav--vertical');
-navVertical.addEventListener('click', function(e) {
+navVertical.addEventListener('click', function (e) {
 
    if (e.target.classList.contains('nav__link')) {
       navFullscreen.classList.remove('nav-fullscreen--active');
    }
 });
 
-var navFullscreenCross = document.querySelector('.nav-fullscreen__cross');
-navFullscreenCross.addEventListener('click', function() {
+navFullscreenCross.addEventListener('click', function () {
    navFullscreen.classList.remove('nav-fullscreen--active');
 });
 
@@ -59,11 +58,12 @@ accordeonTeam();
 function accordeonTeam() {
    let teamMemberFirstActive = document.querySelector('.team-member');
    teamMemberFirstActive.classList.add('team-member--active');
-   
+
    let lastActive = teamMemberFirstActive;
 
-   teamList.addEventListener('click', function(e) {
+   teamList.addEventListener('click', function (e) {
       if (e.target.classList.contains('team-member__name')) {
+
          if (lastActive) {
             lastActive.classList.remove('team-member--active');
          }
@@ -88,22 +88,18 @@ function accordeonMenu() {
 
    for (let menuAccordeonLink of menuAccordeonLinks) {
 
-      menuAccordeonLink.addEventListener('click', function(e) {
+      menuAccordeonLink.addEventListener('click', function (e) {
          e.preventDefault();
-   
+
          if (menuAccordeonLink.parentNode.classList.contains('menu-accordeon__item--active')) {
-   
             menuAccordeonLink.parentNode.classList.remove('menu-accordeon__item--active');
-   
+
          } else {
-            
-            if (menuAccordeonLink.classList.contains('menu-accordeon__link')) {
-   
-               if (currentActive) {
-                  currentActive.classList.remove('menu-accordeon__item--active');
-               }
+
+            if (currentActive) {
+               currentActive.classList.remove('menu-accordeon__item--active');
             }
-   
+
             currentActive = menuAccordeonLink.parentNode;
             menuAccordeonLink.parentNode.classList.toggle('menu-accordeon__item--active');
          }
@@ -123,11 +119,11 @@ let player;
 
 function onYouTubeIframeAPIReady() {
    player = new YT.Player('yt-player', {
-      height: '100%',          // по макету 405
-      width: '100%',           // по макету 640
+      height: '100%', // по макету 405
+      width: '100%', // по макету 640
       videoId: 'zmg_jOwa9Fc',
       playerVars: {
-         autoplay:0,
+         autoplay: 0,
          controls: 0,
          disablekb: 0,
          modestbranding: 0,
@@ -146,7 +142,7 @@ function onYouTubeIframeAPIReady() {
 function onPlayerStateChange(event) {
    const playerButton = $('.player__start');
 
-   switch(event.data) {
+   switch (event.data) {
       case 1:
          $('.player__wrapper').addClass('player__wrapper--active');
          playerButton.addClass('paused');
@@ -161,10 +157,10 @@ function onPlayerStateChange(event) {
 
 function onPlayerReady() {
    const durationSeconds = player.getDuration();
-   
+
    let interval;
    clearInterval(interval);
-   
+
    interval = setInterval(() => {
       const compleatedSeconds = player.getCurrentTime();
       const percent = (compleatedSeconds / durationSeconds) * 100;
@@ -224,7 +220,10 @@ function determPlay(elem, event) {
 }
 
 function dragPlay(e) {
-   const {button, range} = coordsPlay;
+   const {
+      button,
+      range
+   } = coordsPlay;
    button.x = e.pageX - range.offsetLeft - (button.width / 2);
 
    if (button.x < 0) button.x = 0;
@@ -304,7 +303,10 @@ function determVolume(elem, event) {
 }
 
 function dragVolume(e) {
-   const {button, range} = coordsVolume;
+   const {
+      button,
+      range
+   } = coordsVolume;
    button.y = e.pageY - range.offsetTop - (button.height / 2);
 
    if (button.y < 0) button.y = 0;
@@ -316,7 +318,7 @@ function dragVolume(e) {
 
    const newPlayerVolume = 100 - (button.y / (range.height - button.height)) * 100;
    player.setVolume(newPlayerVolume);
-      
+
    if (newPlayerVolume == 0) {
       playerVolume.classList.add('mute');
       player.mute();
@@ -353,11 +355,11 @@ volumeRange.addEventListener('click', e => {
 });
 
 volumePic.addEventListener('click', e => {
-   
+
    if (playerVolume.classList.contains('mute')) {
       playerVolume.classList.remove('mute');
       player.unMute();
-      
+
    } else {
       playerVolume.classList.add('mute');
       player.mute();
@@ -384,14 +386,15 @@ const formBtnSubmit = document.querySelector('.form__btn-submit');
 const formNotification = document.querySelector('.form-notification');
 const formNotificationText = document.querySelector('.form-notification__text');
 
-formBtnSubmit.addEventListener('click', function(e) {
+formBtnSubmit.addEventListener('click', function (e) {
    e.preventDefault();
 
    if (validateForm(formOrder)) {
       const formData = {
          name: formOrder.elements.name.value,
          phone: formOrder.elements.phone.value,
-         comment: formOrder.elements.comment.value
+         comment: formOrder.elements.comment.value,
+         to: 'qwer@mail.ru'
       }
 
       const xhr = new XMLHttpRequest();
@@ -399,13 +402,11 @@ formBtnSubmit.addEventListener('click', function(e) {
       xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
       xhr.setRequestHeader('content-type', 'application/json');
       xhr.send(JSON.stringify(formData));
-      xhr.addEventListener('load', function() {
-         if (xhr.response.status) {
-            formNotificationText.textContent = 'Сообщение отправлено';
-         } else {
-            formNotificationText.textContent = 'Сообщение не отправлено, повторите попытку позже';
-         }
+
+      xhr.addEventListener('load', function () {
+         formNotificationText.textContent = xhr.response.message;
       });
+
       formNotification.style.display = 'flex';
       formOrder.reset();
    }
@@ -432,8 +433,8 @@ function validateForm(form) {
 function validateField(field) {
    if (!field.checkValidity()) {
       field.classList.add('form__block-input--error');
-
       return false;
+
    } else {
       return true;
    }
@@ -442,7 +443,7 @@ function validateField(field) {
 for (let i = 0; i < formOrder.length; i++) {
    const elementForm = formOrder[i];
 
-   elementForm.addEventListener('focus', function() {
+   elementForm.addEventListener('focus', function () {
       elementForm.classList.remove('form__block-input--error');
    });
 }
@@ -450,7 +451,7 @@ for (let i = 0; i < formOrder.length; i++) {
 
 const formNotificationBtn = document.querySelector('.form-notification__btn');
 
-formNotificationBtn.addEventListener('click', function(e) {
+formNotificationBtn.addEventListener('click', function (e) {
    e.preventDefault();
 
    formNotification.style.display = 'none';
@@ -464,8 +465,7 @@ formNotificationBtn.addEventListener('click', function(e) {
 
 ymaps.ready(init);
 
-var placemarks = [
-   {
+var placemarks = [{
       latitude: 59.97,
       longitude: 30.31,
       hintContent: '<div class="map__hint">ул. Литераторов, д.19</div>',
@@ -510,13 +510,12 @@ function init() {
       behaviors: ['drag']
    });
 
-   for (var i = 0; i < placemarks.length; i++) { 
-      
+   for (var i = 0; i < placemarks.length; i++) {
+
       geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude], {
          hintContent: placemarks[i].hintContent,
          balloonContent: placemarks[i].balloonContent.join('')
-      }, 
-      {
+      }, {
          iconLayout: 'default#image',
          iconImageHref: 'img/map-marker.png',
          iconImageSize: [46, 57],
@@ -525,13 +524,11 @@ function init() {
    }
 
    var clusterer = new ymaps.Clusterer({
-      clusterIcons: [
-         {
-            href: 'img/dark-burger.png',
-            size: [50, 40],
-            offset: [-25, -20]
-         }
-      ],
+      clusterIcons: [{
+         href: 'img/dark-burger.png',
+         size: [50, 40],
+         offset: [-25, -20]
+      }],
       clusterIconContentLayout: null
    });
 
@@ -544,7 +541,7 @@ function init() {
 
 // OnePageScroll
 
-$(document).ready(function() {
+$(document).ready(function () {
 
    function coloringDots(index) {
       $('.wrapper')
@@ -566,7 +563,7 @@ $(document).ready(function() {
 
          $('.pagination__list').append(dotPagination);
       });
-      
+
       $('.pagination__item').first().addClass('pagination__item--active');
    };
 
@@ -584,18 +581,18 @@ $(document).ready(function() {
    $('.nav__link, .button').on('click', function () {
       const $this = $(this),
          activeSection = $($this.attr('href')),
-         index = activeSection.index('.section');
+         index = activeSection.index('.section');
 
       activeSection
          .addClass('section__active')
          .siblings()
          .removeClass('section__active');
-         
+
       // console.log(activeSection);
       // console.log(index);
       coloringDots(index);
    });
-   
+
    function moveSection(container, sectionNum) {
 
       var timeNow = new Date().getTime(),
@@ -609,7 +606,7 @@ $(document).ready(function() {
          lastAnimation = 0;
 
       if (reqItem.length) {
-         if(timeNow - lastAnimation < duration + settings.animationTime) {
+         if (timeNow - lastAnimation < duration + settings.animationTime) {
             e.preventDefault();
             return;
          } else {
@@ -624,30 +621,30 @@ $(document).ready(function() {
          }
       }
    };
-      
+
    $('.wrapper').on({
       wheel: function (e) {
-      e.preventDefault();
+         e.preventDefault();
 
-      var delta = e.originalEvent.deltaY,
-         container = $('.wrapper'),
-         sections = container.find('.section'),
-         activeItem = sections.filter('.section__active'),
-         existedItem, edgeItem, reqItem;
+         var delta = e.originalEvent.deltaY,
+            container = $('.wrapper'),
+            sections = container.find('.section'),
+            activeItem = sections.filter('.section__active'),
+            existedItem, edgeItem, reqItem;
 
-      if (delta > 0) {
-         existedItem = activeItem.next();
-         edgeItem = sections.first();
-      }
-      
-      if (delta < 0) {
-         existedItem = activeItem.prev();
-         edgeItem = sections.last();
-      }
-      
-      reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
-      moveSection(container, reqItem);
-      // console.log(delta);
+         if (delta > 0) {
+            existedItem = activeItem.next();
+            edgeItem = sections.first();
+         }
+
+         if (delta < 0) {
+            existedItem = activeItem.prev();
+            edgeItem = sections.last();
+         }
+
+         reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+         moveSection(container, reqItem);
+         // console.log(delta);
       },
 
       touchmove: e => e.preventDefault()
@@ -661,7 +658,7 @@ $(document).ready(function() {
          sections = container.find('.section'),
          activeItem = sections.filter('.section__active');
 
-      switch(e.keyCode) {
+      switch (e.keyCode) {
          case 40:
             moveSection(container, activeItem.next().index());
             break;
@@ -683,25 +680,24 @@ $(document).ready(function() {
       // TouchSwipe
 
       $('body').swipe({
-         
-         swipe:function(event, direction, distance) {
+
+         swipe: function (event, direction, distance) {
             // console.log('You swiped ' + direction + ' ' + distance);
-   
+
             var container = $('.wrapper'),
                sections = container.find('.section'),
                activeItem = sections.filter('.section__active'),
                reqItem;
-            
+
             if (direction == 'up') {
                reqItem = activeItem.next().index();
-   
+
             } else if (direction == 'down') {
                reqItem = activeItem.prev().index();
             }
-   
+
             moveSection(container, reqItem);
          },
-   
          excludedElements: "label, button, input, select, textarea, .noSwipe"
       });
    }
