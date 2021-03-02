@@ -1,0 +1,49 @@
+.contacts {
+   font-style: normal;
+
+   @include phones {
+      margin-bottom: rem(16);
+   }
+
+   &__address {
+      font-weight: 300;
+      margin-bottom: rem(8px);
+   }
+
+   &__tel {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+
+      @include phones {
+         justify-content: center;
+      }
+
+      &-icon {
+         width: 12px;
+         height: 11px;
+         fill: $red;
+         transition: 0.3s;
+      }
+
+      &-link:hover+&-icon {
+         fill: $orange;
+      }
+
+      &-link {
+         text-decoration: none;
+         font-weight: 700;
+         margin-left: .2em;
+         color: $red;
+         position: relative;
+         transition: 0.3s;
+
+         &:hover {
+            color: $orange;
+         }
+
+      }
+
+   }
+}

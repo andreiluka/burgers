@@ -1,0 +1,41 @@
+.feature {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+
+   @include phones {
+      flex-direction: row;
+      text-align: left;
+      margin-bottom: rem(30); // 30px
+   }
+
+   &__img {
+      width: rem(97); // 97px
+      height: rem(89); // 89px
+      margin-bottom: rem(33); // 33px
+
+      @include phones {
+         margin-bottom: 0;
+         margin-right: rem(28);
+      }
+   }
+
+   &__title {
+      font-family: 'lifehack', Arial, Helvetica, sans-serif;
+      font-size: rem(24); // 24px
+      margin-bottom: rem(8); // 20px - 12
+   }
+
+   &__text {
+      opacity: 0.8;
+      font-weight: 300;
+   }
+}
+
+// @each $featureimg in (meat, hand, natural) {
+
+//    .feature__img-#{$featureimg} {
+//       background: url('../img/#{$featureimg}.png') center center / contain no-repeat;
+//    }
+// }

@@ -1,0 +1,10 @@
+.products {
+   background-image: linear-gradient(to top, $orange 0%, #eb8c38 48%, $orange 74%);
+   color: #ffffff;
+   position: relative;
+
+   &__list {
+      display: flex;
+      position: relative;
+   }
+}

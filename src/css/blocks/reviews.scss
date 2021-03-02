@@ -1,0 +1,19 @@
+.reviews {
+   color: #ffffff;
+}
+
+.reviews__list {
+   display: flex;
+   flex-wrap: wrap;
+   height: 100%;
+}
+
+.reviews__item {
+   width: calc(100% / 4);
+   height: 50%;
+
+   @include tablets {
+      width: calc(100% / 2);
+      height: 25%;
+   }
+}

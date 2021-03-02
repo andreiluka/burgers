@@ -1,0 +1,29 @@
+.socials__list {
+   display: flex;
+}
+
+// .socials__link {
+//    display: block;
+//    width: 23px;
+//    height: 23px;
+//    background: center center no-repeat;
+//    margin: 0 rem(10px) 0;
+// }
+
+// @each $socialico in (vk, fb, inst, twitter) {
+//    .socials__link-#{$socialico} {
+//       background: url('../../img/#{$socialico}.png') center center no-repeat;
+//    }
+// }
+
+.socials__icon {
+   width: 23px;
+   height: 23px;
+   margin: 0 rem(10px) 0;
+   fill: #5a5a5a;
+   transition: 0.3s;
+
+   &:hover {
+      fill: #ffffff;
+   }
+}
