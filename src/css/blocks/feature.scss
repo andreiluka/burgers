@@ -36,6 +36,6 @@
 // @each $featureimg in (meat, hand, natural) {
 
 //    .feature__img-#{$featureimg} {
-//       background: url('../img/#{$featureimg}.png') center center / contain no-repeat;
+//       background: url('./img/#{$featureimg}.png') center center / contain no-repeat;
 //    }
 // }

@@ -46,9 +46,6 @@
             .addClass('section__active')
             .siblings()
             .removeClass('section__active');
-   
-         // console.log(activeSection);
-         // console.log(index);
          coloringDots(index);
       });
    
@@ -103,7 +100,6 @@
    
             reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
             moveSection(container, reqItem);
-            // console.log(delta);
          },
    
          touchmove: e => e.preventDefault()
