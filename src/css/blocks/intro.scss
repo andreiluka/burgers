@@ -1,0 +1,34 @@
+.intro {
+   background: url('./img/bg-intro.jpg') center center / cover no-repeat;
+   position: relative;
+   color: #ffffff;
+
+   &__link {
+      width: rem(29px);
+      height: rem(14px);
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: arrow 2s infinite;
+   }
+
+   &__arrow {
+      width: rem(29);
+      height: rem(14);
+   }
+}
+
+@keyframes arrow {
+   0% {
+      transform: translateY(0);
+   }
+
+   50% {
+      transform: translateY(150%);
+   }
+
+   100% {
+      transform: translateY(0);
+   }
+}

@@ -1,0 +1,76 @@
+.review {
+   position: relative;
+
+   &:hover {
+      .review__desc {
+         opacity: 1;
+      }
+   }
+}
+
+.review__img {
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+   filter: grayscale(100%);
+}
+
+.review__desc {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   padding: 3.5714em 5% 1.4286em;
+   background: rgba(#272829, 0.8);
+   opacity: 0;
+   transition: 0.5s;
+
+   @include tablets {
+      text-align: center;
+      padding: 1.3em 10%;
+   }
+
+   @include phones {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+}
+
+.review__name {
+   font-family: "Gagalin", Arial, Helvetica, sans-serif;
+   margin-bottom: rem(20px);
+
+   @include phones {
+      font-size: rem(24);
+   }
+}
+
+.review__text {
+   font-weight: 300;
+   line-height: 1.714em;
+   margin-bottom: 0.714em;
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 14;
+   -webkit-box-orient: vertical;
+
+   @include tablets {
+      -webkit-line-clamp: 5;
+   }
+
+   @include phones {
+      display: none;
+   }
+}
+
+.review__button {
+   background: $black;
+
+   &:hover {
+      background: #1f2122;
+   }
+}

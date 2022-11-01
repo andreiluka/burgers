@@ -1,0 +1,56 @@
+.nav {
+   @include tablets {
+      display: none;
+   }
+}
+
+.nav__list {
+   display: flex;
+   margin-right: rem(15);
+}
+
+.nav__item {
+   display: inline-flex;
+   align-items: center;
+   transition: 0.2s;
+
+   &:after {
+      content: '\2022';
+      margin: 0 1vw;
+   }
+
+   &:last-child:after {
+      display: none;
+   }
+
+   &:hover {
+      color: $red;
+   }
+
+   .nav__link {
+      font-size: rem(13);
+      color: inherit;
+      text-transform: uppercase;
+      text-decoration: none;
+   }
+}
+
+.nav--vertical {
+   @include tablets {
+      display: block;
+   }
+
+   .nav__list {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 88vh;
+      margin-right: 0;
+   }
+
+   .nav__item {
+      &::after {
+         content: none;
+      }
+   }
+}

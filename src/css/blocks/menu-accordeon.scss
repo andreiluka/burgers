@@ -1,0 +1,93 @@
+.menu-accordeon {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   @extend %clearfix;
+}
+
+.menu-accordeon__item {
+   float: left;
+   height: 100%;
+}
+
+.menu-accordeon__link {
+   display: block;
+   width: rem(80);
+   height: 100%;
+   font-family: "Gagalin", Arial, Helvetica, sans-serif;
+   text-decoration: none;
+   color: inherit;
+   float: left;
+   position: relative;
+
+   &:hover {
+
+      .menu-accordeon__name {
+         color: $orange;
+      }
+   }
+
+   @include tablets {
+      width: 10vw;
+   }
+}
+
+@each $menuimg in (meat-eater, vegetarian, dietary) {
+
+   .menu-accordeon__link--#{$menuimg} {
+      background: url('./img/#{$menuimg}.jpg') center center / cover no-repeat;
+   }
+}
+
+.menu-accordeon__name {
+   font-size: rem(40px);
+   transform: rotate(-90deg) translateY(-50%);
+   transform-origin: 0 0;
+   white-space: nowrap;
+   position: absolute;
+   top: 94%;
+   left: 50%;
+   transition: 0.3s;
+
+   @include phones {
+      font-size: 7vw;
+   }
+}
+
+.menu-accordeon__desc {
+   width: 0;
+   height: 100%;
+   background: rgba(#0e0f0f, 0.9);
+   float: left;
+   overflow: hidden;
+   transition: 0.3s;
+}
+
+.menu-accordeon__text {
+   width: 100%;
+   line-height: 1.8;
+   display: none;
+}
+
+.menu-accordeon__item--active {
+
+   .menu-accordeon__desc {
+      width: rem(512px);
+      padding: 8% 12%;
+
+      @include tablets {
+         width: 66vw;
+         padding: 5vw 5vw;
+      }
+
+      @include phones {
+         width: 64vw;
+         padding: 4vw 4vw;
+      }
+   }
+
+   .menu-accordeon__text {
+      display: block;
+   }
+}

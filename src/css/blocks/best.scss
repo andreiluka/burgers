@@ -1,0 +1,22 @@
+.best {
+   background: url('./img/bg-best.jpg') center center / cover no-repeat;
+   color: $black;
+
+   &__list {
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(21px);
+
+      @include phones {
+         flex-direction: column;
+      }
+   }
+
+   &__item {
+      width: calc(100% / 3 - 0.9375rem);
+
+      @include phones {
+         width: 95%;
+      }
+   }
+}

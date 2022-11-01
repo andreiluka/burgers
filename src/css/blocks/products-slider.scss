@@ -1,0 +1,52 @@
+.products-slider {
+   display: flex;
+   align-items: center;
+   width: 100%;
+}
+
+.products-slider__arrow-left,
+.products-slider__arrow-right {
+   text-decoration: none;
+
+   @include phones {
+      position: absolute;
+      top: 50%;
+   }
+}
+
+.products-slider__arrow-left {
+   margin-right: rem(20);
+
+   @include phones {
+      left: 1.5%;
+   }
+}
+
+.products-slider__arrow-prev {
+   transform: rotate(90deg);
+}
+
+.products-slider__arrow-prev,
+.products-slider__arrow-next {
+   width: rem(27);
+   height: rem(13);
+}
+
+.products-slider__arrow-right {
+   margin-left: rem(20);
+
+   @include phones {
+      right: 1.5%;
+   }
+}
+
+.products-slider__arrow-next {
+   transform: rotate(-90deg);
+}
+
+.products-slider__container {
+   display: flex;
+   justify-content: flex-start;
+   width: 95%;
+   overflow: hidden;
+}

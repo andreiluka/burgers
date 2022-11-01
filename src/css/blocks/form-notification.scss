@@ -1,0 +1,38 @@
+.form-notification {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   background: rgba(#2f3234, 0.92);
+   display: none;
+   justify-content: center;
+   align-items: center;
+}
+
+.form-notification__block {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: #ffffff;
+   border-radius: 5px;
+   padding: rem(20);
+   animation: notificationScale 0.3s 0.3s backwards;
+}
+
+@keyframes notificationScale {
+   0% {
+      transform: scale(0);
+   }
+
+   100% {
+      transform: scale(1);
+   }
+}
+
+.form-notification__text {
+   font-weight: 300;
+   margin-bottom: rem(15);
+   text-align: center;
+}

@@ -1,0 +1,21 @@
+.footer {
+   padding: rem(10px) 0;
+   background: url('./img/bg-footer.jpg') center center / cover no-repeat;
+   color: #ffffff;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   z-index: 10;
+
+   &__container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      @include phones {
+         flex-direction: column;
+         text-align: center;
+         padding: rem(12) 0;
+      }
+   }
+}

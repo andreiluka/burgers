@@ -1,0 +1,16 @@
+.button {
+   color: #ffffff;
+   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+   font-size: rem(13px);
+   text-transform: uppercase;
+   background-color: $red;
+   padding: 0.76923em 1.23077em;
+   border-radius: rem(5px);
+   transition: 0.3s;
+   text-decoration: none;
+   display: inline-block;
+
+   &:hover {
+      background-color: #c1401e;
+   }
+}

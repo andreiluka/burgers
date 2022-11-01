@@ -1,0 +1,46 @@
+.salutation {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex: 0.8;
+
+   @include tablets {
+      flex-direction: column;
+      padding: 0 10%;
+   }
+
+   &__pic {
+      margin-right: rem(13);
+
+      @include tablets {
+         margin-right: 0;
+      }
+   }
+
+   &__tagline {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: rem(50);
+
+      @include tablets {
+         align-items: center;
+         text-align: center;
+      }
+
+      @include phones {
+         padding-top: rem(30);
+      }
+   }
+
+   &__text {
+      font-family: 'lifehack', Arial, Helvetica, sans-serif;
+      font-size: rem(65);
+      line-height: 1;
+
+      @include phones {
+         font-size: rem(52);
+      }
+   }
+}

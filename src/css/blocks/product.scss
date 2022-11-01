@@ -1,0 +1,173 @@
+.product__container {
+   display: flex;
+   position: relative;
+   height: 100%;
+
+   @include tablets {
+      flex-direction: column;
+      align-items: center;
+   }
+}
+
+.product__column {
+   width: 50%;
+   font-family: 'gagalin', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin-right: rem(28);
+
+   &:last-child {
+      margin-right: 0;
+   }
+
+   @include tablets {
+      width: 92%;
+      margin: 0 0 rem(46) 0;
+      text-align: center;
+      align-items: center;
+
+      &:last-child {
+         margin: 0;
+      }
+   }
+
+   @include phones {
+      margin-bottom: 3vw;
+   }
+}
+
+.product__column-block {
+   position: relative;
+
+   @include phones {
+      position: static;
+   }
+}
+
+.product__ingredients-block {
+   width: 90px;
+   height: 90px;
+   background-color: rgba($red, 0.4);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s;
+   position: relative;
+   top: rem(11);
+
+   &:hover {
+      background-color: rgba($red, 1);
+
+      .composition {
+         left: 100%;
+         opacity: 1;
+      }
+   }
+
+   @include phones {
+      top: 0;
+      left: rem(-14);
+      margin-bottom: 15px;
+   }
+}
+
+.product__ingredients-icon {
+   width: 46px;
+   height: 44px;
+}
+
+.product__ingredients-text {
+   margin-top: 8px;
+}
+
+.product__kkal-block {
+   width: 60px;
+   height: 77px;
+   text-align: center;
+   opacity: 0.5;
+   position: relative;
+
+   @include tablets {
+      position: absolute;
+      top: 3.1%;
+      right: 0;
+   }
+
+   @include phones {
+      top: 0;
+   }
+}
+
+.product__kkal-number {
+   font-size: 19px;
+   position: absolute;
+   top: 52%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.product__kkal-icon {
+   width: 60px;
+   height: 60px;
+}
+
+.product__title {
+   text-align: start;
+   margin-bottom: rem(23);
+
+   @include tablets {
+      font-size: rem(76.8);
+      text-align: center;
+      line-height: 0.89;
+   }
+
+   @include phones {
+      font-size: rem(57);
+      padding: 0 3px;
+      margin-bottom: 3vw;
+   }
+}
+
+.product__text {
+   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+   font-weight: 300;
+   line-height: 1.72;
+   margin-bottom: rem(33);
+
+   @include phones {
+      line-height: 1.5;
+      margin-bottom: 4vw;
+   }
+}
+
+.product__order {
+   display: flex;
+   align-items: flex-end;
+   line-height: 0.9;
+
+   @include tablets {
+      justify-content: center;
+   }
+}
+
+.product__price {
+   color: $red;
+   font-size: rem(30);
+   margin-right: rem(25);
+
+   @include phones {
+      font-size: rem(27.43);
+   }
+}
+
+.product__sum {
+   font-size: rem(72);
+
+   @include phones {
+      font-size: rem(57.143);
+   }
+}

@@ -1,0 +1,20 @@
+.title {
+   font-family: 'gagalin', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: rem(72);
+   line-height: 1.1;
+   margin-bottom: rem(40);
+   text-align: center;
+
+   @include tablets {
+      font-size: rem(82.2857);
+   }
+
+   @include phones {
+      font-size: rem(60);
+      margin-bottom: rem(20);
+   }
+}
+
+.title__orange {
+   color: $orange;
+}

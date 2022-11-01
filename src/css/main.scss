@@ -1,0 +1,24 @@
+// variables
+
+$orange: #f9b43b;
+$black: #2f3234;
+$red: #e35028;
+
+
+// breakpoints
+
+$tablets: 768px;
+$phones: 480px;
+
+
+// media
+
+@import "./layout/media.scss";
+
+// layout
+
+@import "./layout/mixins.scss";
+@import "./layout/layout.scss";
+@import "./layout/fonts.scss";
+
+@import "./blocks/*.scss";

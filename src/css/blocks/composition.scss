@@ -1,0 +1,42 @@
+.composition {
+   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+   color: #2f3234;
+   background-color: rgba(#ffffff, 0.9);
+   border-radius: 5px;
+   padding: rem(20);
+   position: absolute;
+   top: 0;
+   left: -10000%;
+   opacity: 0;
+
+   &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+}
+
+.composition__pic {
+   width: 42px;
+   height: 40px;
+   margin-right: rem(23);
+
+   @include phones {
+      margin-right: 3vw;
+   }
+}
+
+.composition__name {
+   width: rem(126);
+   font-weight: 500;
+   text-align: start;
+
+   @include phones {
+      width: 27vw;
+   }
+}

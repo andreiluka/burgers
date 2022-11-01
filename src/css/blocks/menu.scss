@@ -1,0 +1,11 @@
+.menu {
+   background: url('./img/bg-menu.jpg') top center / cover no-repeat;
+   color: #ffffff;
+   position: relative;
+
+   &__title {
+      position: absolute;
+      top: 17%;
+      left: 8%;
+   }
+}
